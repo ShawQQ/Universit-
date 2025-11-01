@@ -83,12 +83,10 @@ public class Arrays {
 
 	private static int[] inserisci(int k, int[] a, int i){
 		int[] result = new int[a.length];
+		result[i] = a[k];
+		result[k] = a[i];
 		for(int j = 0; j < a.length; j++){
-			if(j == i){
-				result[j] = a[k];
-			}else if(j == k){
-				result[j] = a[i];
-			}else{
+			if(j != i && j != k){
 				result[j] = a[j];
 			}
 		}
