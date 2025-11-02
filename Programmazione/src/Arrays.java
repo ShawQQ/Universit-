@@ -64,11 +64,10 @@ public class Arrays {
 	}
 
 	private static int[][] generatePermutation(int[] a){
-		int[][] result = new int[Recursion.factorial(a.length)][a.length];
 		if(a.length == 1){
-			result[0] = a;
-			return result;
+			return new int[][] { a };
 		}
+		int[][] result = new int[Recursion.factorial(a.length)][a.length];
 		int counter = 0;
 		for(int i = 0; i < a.length; i++){
 			int[] currentList = inserisci(0, a, i);
@@ -101,18 +100,6 @@ public class Arrays {
 
 		return result;
 	}
-
-	private static int[][] concatenaMatrix(int[][] a, int[][] b){
-		int[][] result = new int[a.length + b.length][a[0].length];
-		for(int i = 0; i < a.length; i++){
-			result[i] = a[i];
-		}
-		for(int j = 0; j < b.length; j++){
-			result[j + a.length] = b[j];
-		}
-		return result;
-	}
-
 
 	private static int[] getIntegerList(int n){
 		int[] result = new int[n];
