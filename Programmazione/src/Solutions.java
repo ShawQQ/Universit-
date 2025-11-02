@@ -1,6 +1,9 @@
 public class Solutions {
     public static void main(String[] args){
-        //testRecursion();
+        System.out.println("Ricorsione: ");
+        testRecursion();
+        printDivisor();
+        System.out.println("Array: ");
         testArrays();
     }
 
@@ -21,8 +24,9 @@ public class Solutions {
     }
 
     private static void testArrays(){
-        /*int[] a = {1,2,3,4};
+        int[] a = {1,2,3,4};
         Arrays.inverti(a);
+        System.out.println("Inversione: ");
         printArray(a);
         printDivisor();
         int[] b = {1,2,3,4};
@@ -30,9 +34,11 @@ public class Solutions {
         printArray(b);
         printArray(Arrays.invertiNotInPlace(b));
         printDivisor();
-        printArray(Arrays.concatena(a,b));*/
+        System.out.println("Concatena: ");
+        printArray(Arrays.concatena(a,b));
         printDivisor();
-        printMultiDimensionalArray(Arrays.permutazioni(9));
+        System.out.println("Permutazioni: ");
+        printMultiDimensionalArray(Arrays.permutazioni(4));
     }
     private static void printArray(int[] a){
         for(int i = 0; i < a.length; i++){
