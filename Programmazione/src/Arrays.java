@@ -80,17 +80,36 @@ public class Arrays {
 		return result;
 	}
 
+    public static int[][] permutazioni2(int n){
+        int[][] result = { {} };
+        for(int i = 0; i < n; i++){
+            result[i] = inserisci(0, new int[] {}, i);
+            for(int j = 0; j < n; j++){
+
+            }
+        }
+
+        return result;
+    }
+
 	private static int[] inserisci(int k, int[] a, int i){
 		int[] result = new int[a.length];
-		result[i] = a[k];
-		result[k] = a[i];
-		for(int j = 0; j < a.length; j++){
-			if(j != i && j != k){
-				result[j] = a[j];
-			}
-		}
+        copyStartingFromIndex(a, 0, result);
+        swap(result, i, k);
 		return result;
 	}
+
+    private static void copyStartingFromIndex(int[] a, int k, int[] result){
+        for(int i = 0; i < a.length; i++){
+            result[i + k] = a[i];
+        }
+    }
+
+    private static void swap(int[] a, int i, int j){
+        int tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
 
 	private static int[] removeFirstElement(int[] a){
 		int[] result = new int[a.length - 1];
