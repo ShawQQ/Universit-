@@ -5,7 +5,8 @@ public class Solutions {
         //printDivisor();
         //System.out.println("Array: ");
         //testArrays();
-        Lab.pascal(7);
+        //Lab.pascal(7);
+        testSearch();
     }
 
     private static void testRecursion(){
@@ -40,6 +41,11 @@ public class Solutions {
         printDivisor();
         System.out.println("Permutazioni: ");
         printMultiDimensionalArray(Arrays.permutazioni(4));
+    }
+    private static void testSearch(){
+        int[] a = {5,4,9,3,15,2};
+        Search.mergeSort(a, 0, a.length-1);
+        printArray(a);
     }
     private static void printArray(int[] a){
         for(int i = 0; i < a.length; i++){

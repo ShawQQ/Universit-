@@ -46,13 +46,35 @@ public class Search {
 
     public static void mergeSort(int[] a, int from, int to){
         if(from < to){
-            mergeSort(a, from, (to-from)/2);
-            mergeSort(a, (from+to)/2, to);
-            merge(a, from, (from+to)/2, to);
+            int middle = (from+to)/2;
+            mergeSort(a, from, middle);
+            mergeSort(a, middle+1, to);
+            merge(a, from, middle, to);
         }
     }
 
-    private static void merge(int[] a, int from, int to, int last){
+    private static void merge(int[] a, int from, int middle, int to){
+        int[] b = new int[to-from+1];
+        int i = from;
+        int j = middle + 1;
+        int k = 0;
+        while(i <= middle && j <= to){
+            if(a[i] < a[j]){
+                b[k] = a[i++];
+            }else{
+                b[k] = a[j++];
+            }
+            k++;
+        }
+        while(i <= middle){
+            b[k++] = a[i++];
+        }
+        while(j <= to){
+            b[k++] = a[j++];
+        }
+        for(int q = from; q <= to; q++){
+            a[q] = b[q-from];
+        }
     }
 
 //    public static int[] merge(int[] a, int[] b){
@@ -74,7 +96,7 @@ public class Search {
 
     private static int[] copy(int[] a, int left, int right){
         int[] res = new int[right+left-1];
-        for(int i = left; i<=left; i++){
+        for(int i = left; i<=right; i++){
             res[i-left] = a[i];
         }
         return res;
