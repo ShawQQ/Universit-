@@ -1,10 +1,11 @@
 public class Solutions {
     public static void main(String[] args){
-        System.out.println("Ricorsione: ");
-        testRecursion();
-        printDivisor();
-        System.out.println("Array: ");
-        testArrays();
+        //System.out.println("Ricorsione: ");
+        //testRecursion();
+        //printDivisor();
+        //System.out.println("Array: ");
+        //testArrays();
+        Lab.pascal(7);
     }
 
     private static void testRecursion(){
