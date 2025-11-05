@@ -4,9 +4,9 @@ public class Solutions {
         //testRecursion();
         //printDivisor();
         //System.out.println("Array: ");
-        //testArrays();
+        testArrays();
         //Lab.pascal(7);
-        testSearch();
+        //testSearch();
     }
 
     private static void testRecursion(){
@@ -26,21 +26,23 @@ public class Solutions {
     }
 
     private static void testArrays(){
-        int[] a = {1,2,3,4};
-        Arrays.inverti(a);
-        System.out.println("Inversione: ");
-        printArray(a);
-        printDivisor();
-        int[] b = {1,2,3,4};
-        Arrays.invertiNotInPlace(b);
-        printArray(b);
-        printArray(Arrays.invertiNotInPlace(b));
-        printDivisor();
-        System.out.println("Concatena: ");
-        printArray(Arrays.concatena(a,b));
-        printDivisor();
-        System.out.println("Permutazioni: ");
-        printMultiDimensionalArray(Arrays.permutazioni(4));
+//        int[] a = {1,2,3,4};
+//        Arrays.inverti(a);
+//        System.out.println("Inversione: ");
+//        printArray(a);
+//        printDivisor();
+//        int[] b = {1,2,3,4};
+//        Arrays.invertiNotInPlace(b);
+//        printArray(b);
+//        printArray(Arrays.invertiNotInPlace(b));
+//        printDivisor();
+//        System.out.println("Concatena: ");
+//        printArray(Arrays.concatena(a,b));
+//        printDivisor();
+//        System.out.println("Permutazioni: ");
+//        printMultiDimensionalArray(Arrays.permutazioni(4));
+          System.out.println("Permutazioni 2: ");
+          printMultiDimensionalArray(Arrays.permutazioni2(12));
     }
     private static void testSearch(){
         int[] a = {5,4,9,3,15,2};

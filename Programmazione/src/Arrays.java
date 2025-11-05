@@ -81,26 +81,38 @@ public class Arrays {
 	}
 
     public static int[][] permutazioni2(int n){
-        int[][] result = { {} };
-        for(int i = 0; i < n; i++){
-            result[i] = inserisci(0, new int[] {}, i);
-            for(int j = 0; j < n; j++){
+		if(n == 1){
+			return new int[][] { { 1 } };
+		}
+        int[][] res = new int[Recursion.factorial(n)][n];
+		int[][] permutations = permutazioni2(n - 1);
+		int k = 0;
+		for(int i = 0; i < permutations.length; i++){
+			int[] current = new int[n];
+			copyStartingFromIndex(permutations[i], 0, current);
+			for(int q = 0; q < n; q++){
+				res[k++] = inserisci(n, current, q);
+			}
+		}
 
-            }
-        }
-
-        return result;
+        return res;
     }
 
 	private static int[] inserisci(int k, int[] a, int i){
-		int[] result = new int[a.length];
-        copyStartingFromIndex(a, 0, result);
-        swap(result, i, k);
-		return result;
+		if(i < 0 || i > a.length) return new int[] {};
+		int[] res = new int[a.length];
+		copyStartingFromIndex(a, 0, res);
+		for(int j = i; j < a.length; j++){
+			int tmp = res[j];
+			res[j] = k;
+			k = tmp;
+		}
+		return res;
 	}
 
     private static void copyStartingFromIndex(int[] a, int k, int[] result){
         for(int i = 0; i < a.length; i++){
+        	if(i + k >= result.length) return;
             result[i + k] = a[i];
         }
     }
