@@ -4,9 +4,17 @@ public class Solutions {
         //testRecursion();
         //printDivisor();
         //System.out.println("Array: ");
-        testArrays();
+        //testArrays();
         //Lab.pascal(7);
         //testSearch();
+        testClassPrime();
+    }
+
+    private static void testClassPrime(){
+        Primes primes = new Primes();
+        for(int i = 0; i < 250; i++){
+            System.out.println(primes.next());
+        }
     }
 
     private static void testRecursion(){
