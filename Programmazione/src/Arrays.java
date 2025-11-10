@@ -84,8 +84,8 @@ public class Arrays {
 		if(n == 1){
 			return new int[][] { { 1 } };
 		}
-        int[][] res = new int[Recursion.factorial(n)][n];
-		int[][] permutations = permutazioni2(n - 1);
+        int[][] permutations = permutazioni2(n - 1);
+        int[][] res = new int[n * permutations.length][n];
 		int k = 0;
 		for(int i = 0; i < permutations.length; i++){
 			int[] current = new int[n];
