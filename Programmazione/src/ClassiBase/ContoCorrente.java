@@ -1,3 +1,5 @@
+package ClassiBase;
+
 public class ContoCorrente {
     private double saldo;
     private double maxSaldo;

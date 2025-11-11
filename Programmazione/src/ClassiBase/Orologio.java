@@ -1,3 +1,5 @@
+package ClassiBase;
+
 public class Orologio {
     private int minutes;
     private int hours;

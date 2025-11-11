@@ -1,3 +1,5 @@
+package ClassiBase;
+
 public class Recipiente {
     private int volume;
     private int contenuto;

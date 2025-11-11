@@ -1,3 +1,5 @@
+package ClassiBase;
+
 public class Primes {
     private int MAX_PRIME_ARRAY_SIZE = 100;
     private int currentPrime;
