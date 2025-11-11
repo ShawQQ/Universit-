@@ -56,6 +56,29 @@ public class Rational {
         return this.add(other.negate());
     }
 
+    public Rational simplify(){
+        int mcd = this.getMcd();
+        return new Rational(this.getNumerator() / mcd, this.getDenominator() / mcd);
+    }
+
+    public int compare(Rational y){
+        int first = this.getNumerator() * y.getDenominator();
+        int second = this.getDenominator() * y.getNumerator();
+        if(first == second) return 0;
+        return first > second ? 1 : -1;
+    }
+
+    private int getMcd(){
+        int a = Math.max(this.numerator, this.denominator);
+        int b = Math.min(this.numerator, this.denominator);
+        while(b != 0){
+            int tmp = b;
+            b = a % b;
+            a = tmp;
+        }
+        return a;
+    }
+
     public String toString(){
         return this.getNumerator() + "/" + this.getDenominator();
     }

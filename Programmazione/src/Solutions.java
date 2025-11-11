@@ -1,4 +1,7 @@
+import ClassiBase.Complex;
 import ClassiBase.Primes;
+import Hereditary.Counter;
+import Hereditary.CounterBase;
 
 public class Solutions {
     public static void main(String[] args){
@@ -9,9 +12,35 @@ public class Solutions {
         //testArrays();
         //Lab.pascal(7);
         //testSearch();
-        testClassPrime();
+        //testClassPrime();
+        //testComplex();
+        testCounter();
     }
 
+    public static void testCounter(){
+        Counter c = new Counter();
+        Counter d = new CounterBase(10);
+        printCounter(c);
+        printCounter(d);
+    }
+    public static void printCounter(Counter c){
+        for(int i = 0; i <= 10; i++){
+            System.out.println(c.getNext());
+        }
+    }
+
+    private static void testComplex(){
+        Complex a = new Complex(4, 2);
+        Complex b = new Complex(2, 4);
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(a.add(b));
+        System.out.println(a.substraction(b));
+        System.out.println(a.multiply(b));
+        System.out.println(a.division(b));
+        System.out.println(a.conjugate());
+        System.out.println(a.module());
+    }
     private static void testClassPrime(){
         Primes primes = new Primes();
         for(int i = 0; i < 250; i++){
