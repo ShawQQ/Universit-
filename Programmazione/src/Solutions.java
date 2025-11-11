@@ -14,7 +14,14 @@ public class Solutions {
         //testSearch();
         //testClassPrime();
         //testComplex();
-        testCounter();
+        //testCounter();
+        testMatrixMultiply();
+    }
+
+    public static void testMatrixMultiply(){
+        double[][] a = { {1,1,2}, {0,1,-3} };
+        double[][] b = { {1,1,1}, {2,5,1}, {0,-2,1} };
+        printMultiDimensionalArray(Matrix.multiply(a,b));
     }
 
     public static void testCounter(){
@@ -94,6 +101,15 @@ public class Solutions {
         }
     }
     private static void printMultiDimensionalArray(int[][] a){
+        for(int i = 0; i < a.length; i++){
+            System.out.print("a["+i+"] = [");
+            for(int j = 0; j < a[i].length; j++){
+                System.out.print(" " + a[i][j] + ",");
+            }
+            System.out.println("]");
+        }
+    }
+    private static void printMultiDimensionalArray(double[][] a){
         for(int i = 0; i < a.length; i++){
             System.out.print("a["+i+"] = [");
             for(int j = 0; j < a[i].length; j++){
