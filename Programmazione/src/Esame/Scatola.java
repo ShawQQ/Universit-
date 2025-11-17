@@ -34,7 +34,7 @@ public class Scatola {
         if(this.numero() == currentScatole.length || this.libero() == 0){
             return false;
         }
-        this.scatole[++this.currentScatole] = s;
+        this.scatole[this.currentScatole++] = s;
         return true;
     }
 
