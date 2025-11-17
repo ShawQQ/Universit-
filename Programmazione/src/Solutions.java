@@ -1,5 +1,6 @@
 import ClassiBase.Complex;
 import ClassiBase.Primes;
+import ClassiBase.Recipiente;
 import Hereditary.Counter;
 import Hereditary.CounterBase;
 

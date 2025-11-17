@@ -1,6 +1,6 @@
 package ClassiBase;
 
-public class Recipiente {
+public class Recipiente{
     private int volume;
     private int contenuto;
 
@@ -20,6 +20,7 @@ public class Recipiente {
     }
 
     public void aggiungi(int quantita){
+        if(quantita < 0) throw new IllegalArgumentException("Quantità non valida");
         this.contenuto = Math.min(this.contenuto + quantita, this.volume);
     }
     public void rimuovi(int quantita){
