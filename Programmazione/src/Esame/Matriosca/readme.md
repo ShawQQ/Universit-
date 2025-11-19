@@ -1,0 +1,9 @@
+Si vuole modellare un sistema di gestione di Matriosche. Le matriosche sono bambole cave che possono contenere matriosche più piccole. Definire la classe Matriosca caratterizzata da un volume espresso con un attributo di tipo float e contiene di tipo Matriosca. Definire i seguenti metodi: 
+
+-   Matriosca(float v, String n) costruttore che crea una matriosca vuota di volume v e di nome n. Il costruttore lancia un'eccezione di tipo IllegalArgumentException se n} è null o v è negativo o 0.
+-   boolean inserisci(Matriosca s) inserisce la matriosca  s alla matriosca in oggetto. Se la matriosca da aggiungere la stessa matriosca in oggetto o se è null viene prodotto false. Se la matriosca in oggetto già contiene una matriosca o se il volume della matriosca da inserire è maggiore o uguale alla matriosca in oggetto viene prodotto false altrimenti la matriosca è aggiunta e viene prodotto true. 
+-   float getVolume() produce il volume della matriosca.
+-   Sovrascrivere il metodo  String toString() di modo che venga prodotta la stringa col nome della matriosca in oggetto e di tutte le matriosche eventualmente contenute. Ad esempio se la matriosca "A" contiene la matrtiosca "B" che contiene la matriosca "C", viene applicato il metodo toStringa alla prima matriosca prodotto "A B C".
+-   float volumeTotale() produce la somma dei volumi della matriosca in oggetto e di tutte le matriosche contenute.
+
+ATTENZIONE é vietato l'uso di classi della libreria standard di Java ad eccezione di  String e delle sottoclassi di Exception. Se utile, è possibile definire metodi ausiliari privati in aggiunta a quelli richiesti.
