@@ -1,4 +1,4 @@
-package Esame;
+package Esame.Scatola;
 
 public class Scatola {
     private final Scatola[] scatole;

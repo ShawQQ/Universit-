@@ -1,4 +1,4 @@
-package Esame;
+package Esame.Coda;
 
 /**
  * Rappresenta una visita identificata dalla coppia (nome, cognome)

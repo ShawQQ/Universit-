@@ -1,8 +1,8 @@
-package Esame;
+package Esame.Coda;
 
 /**
  * Rappresenta una coda di Visita per con una capacità statica
- * @see Esame.Visita#Visita per implementazione degli elementi della coda
+ * @see Visita#Visita per implementazione degli elementi della coda
  */
 public class Coda implements ICoda {
 	private Visita[] queue;

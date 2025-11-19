@@ -1,8 +1,8 @@
-package Esame;
+package Esame.Coda;
 
 /**
  * Rappresenta una coda di Visita
- * @see Esame.Visita#Visita per implementazione degli elementi della coda
+ * @see Visita#Visita per implementazione degli elementi della coda
  */
 public interface ICoda {
 	/**
