@@ -103,10 +103,10 @@ public class Insieme {
 		int j = totalElements - 1;
 		int middle = (i+j) / 2;
 		while(i != j && this.values[middle] != x){
-			if(this.values[middle] > x){
-				j = middle;
+			if(this.values[middle] < x){
+				i = middle + 1;
 			}else{
-				i = middle;
+				j = middle - 1;
 			}
 			middle = (i+j)/2;
 		}

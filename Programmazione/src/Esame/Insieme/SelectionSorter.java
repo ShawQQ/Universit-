@@ -3,7 +3,7 @@ package Esame.Insieme;
 public class SelectionSorter implements Sorter {
 	public void sort(int[] toSort, int n) {
 		for(int i = 0; i < n; i++){
-			int m = 0;
+			int m = i;
 			for(int j = i+1; j < n; j++){
 				if(toSort[i] > toSort[j]){
 					m = j;
