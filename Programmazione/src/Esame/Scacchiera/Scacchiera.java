@@ -1,7 +1,7 @@
 package Esame.Scacchiera;
 
 public class Scacchiera {
-	private boolean[][] grid;
+	private final boolean[][] grid;
 
 	public Scacchiera(int n){
 		if(n <= 0) throw new IllegalArgumentException("Dimensione scacchiera non valida");
@@ -21,30 +21,19 @@ public class Scacchiera {
 	}
 	public boolean mossaValida(int i, int j, int k, int w){
 		if(!contienePezzo(i, j) || contienePezzo(k, w) || !isValid(k, w)) return false;
-		int dx = 2;
-		int dy = 1;
-		while(dx > 0){
-			if(
-				mossaValida(i, j, k, w, dx, dy) ||
-				mossaValida(i, j, k, w, -dx, dy) ||
-				mossaValida(i, j, k, w, dx, -dy) ||
-				mossaValida(i, j, k, w, -dx, -dy)
-			){
-				return true;
-			}
-			dx--;
-			dy++;
+		int[][] range = this.moveRange(i, j);
+		for(int q = 0; q < range.length; q++){
+			int[] indexes = range[q];
+			if(k == indexes[0] && w == indexes[1]) return true;
 		}
 		return false;
 	}
-	private boolean mossaValida(int i, int j, int k, int w, int dx, int dy){
-		return i + dx == k && j + dy == w;
-	}
+
 	public boolean dominata(int i, int j){
-		for(int k = 0; k < this.dimensione(); k++){
-			for(int q = 0; q < this.dimensione(); q++){
-				if(mossaValida(k, q, i, j)) return true;
-			}
+		int[][] range = this.moveRange(i, j);
+		for(int k = 0; k < range.length; k++){
+			int[] indexes = range[k];
+			if(this.contienePezzo(indexes[0], indexes[1])) return true;
 		}
 		return false;
 	}
@@ -56,16 +45,66 @@ public class Scacchiera {
 	}
 	public int conta(int i, int j){
 		int total = 0;
-		for(int k = 0; i < this.dimensione(); k++){
-			for(int q = 0; q < this.dimensione(); q++){
-				if(this.mossaValida(k,q,i,j)){
-					total++;
-				}
-			}
+		int[][] range = this.moveRange(i, j);
+		for(int k = 0; k < range.length; k++){
+			if(this.contienePezzo(range[k][0], range[k][1])) total++;
 		}
 		return total;
 	}
 
+	/**
+	 * Enumera tutte le possibili coordinate di arrivo di un cavallo che si trova nella posizione (i,j). Se una coordinata
+	 * si trova fuori dal range possibile della scacchiera assume il valore (-1, -1)
+	 * @param i primo indice
+	 * @param j secondo indice
+	 * @return Array di array di interi contenenti tutte le coordinate possibili che si possono raggiungere partendo da
+	 * (i,j) con una sola mossa
+	 */
+	private int[][] moveRange(int i, int j){
+		int[][] range = new int[8][];
+		for(int k = 0; k < range.length; k++){
+			range[k] = new int[] {-1, -1};
+		}
+		int totalLegalMoves = 0;
+		int dx = 2;
+		int dy = 1;
+		while(dx > 0){
+			int[][] indexesRange = getValidIndexRange(i, j, dx, dy);
+			for(int q = 0; q < indexesRange.length; q++){
+				int[] indexRange = indexesRange[q];
+				if(!contienePezzo(indexRange[0], indexRange[1])){
+					range[totalLegalMoves++] = new int[] { indexRange[0], indexRange[1] };
+				}
+			}
+			dx--;
+			dy++;
+		}
+		return range;
+	}
+
+	/**
+	 * Ritorna tutte le coppie di indici (k,q) valide per questa scacchiera tali per cui k = i +/- dx, q = j +/- dy
+	 * @param i indice di partenza
+	 * @param j indice di partenza
+	 * @param dx incremento primo indice
+	 * @param dy incremenento secondo indice
+	 * @return Un'array di array di interi contenenti le coppie (k,q) valide per questa scacchiera tali per cui
+	 * k = i +/- dx, q = j +/- dy
+	 */
+	private int[][] getValidIndexRange(int i, int j, int dx, int dy) {
+		int[][] indexesRange = new int[4][];
+		int allowedRanges = 0;
+		for(int q = 0; q < 2; q++){
+			if(isValid(i + dx, j + dy)) indexesRange[allowedRanges++] = new int[]{ i + dx, j + dy};
+			if(isValid(i + dx, j - dy)) indexesRange[allowedRanges++] = new int[]{ i + dx, j - dy};
+			dx *= -1;
+		}
+		int[][] realRanges = new int[allowedRanges][];
+		for(int q = 0; q < realRanges.length; q++){
+			realRanges[q] = indexesRange[q];
+		}
+		return realRanges;
+	}
 	private boolean isValid(int i, int j){
 		return isValid(i) && isValid(j);
 	}
