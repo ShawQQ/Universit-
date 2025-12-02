@@ -1,7 +1,7 @@
 package Laboratorio.Libreria;
 
 public class Libreria {
-	private Libro[] books;
+	private final Libro[] books;
 	private int currentBooks;
 	public Libreria(int n){
 		if(n <= 0) throw new IllegalArgumentException("Dimensione libreria non valida");
