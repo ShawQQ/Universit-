@@ -27,7 +27,7 @@ public class Punto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Punto punto = (Punto) o;
-        return Punto.doubleEquals(this.getX(), ((Punto) o).getX()) && Punto.doubleEquals(this.getY(), ((Punto) o).getY());
+        return Punto.doubleEquals(this.getX(), punto.getX()) && Punto.doubleEquals(this.getY(), punto.getY());
     }
 
     public static boolean doubleEquals(double a, double b) {
