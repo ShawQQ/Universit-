@@ -71,10 +71,9 @@ public class Catalogo {
 		if(art.getQuantita() < articolo.getQuantita())
 			throw new IllegalArgumentException("La quantita richiesta non è disponibile");
 		double total = art.getTotal(articolo.getQuantita());
-		if(art.getQuantita() == articolo.getQuantita()){
+		art.setQuantita(art.getQuantita() - articolo.getQuantita());
+		if(art.getQuantita() == 0){
 			this.removeElement(articoloIndex);
-		}else{
-			art.setQuantita(art.getQuantita() - articolo.getQuantita());
 		}
 		return total;
 	}

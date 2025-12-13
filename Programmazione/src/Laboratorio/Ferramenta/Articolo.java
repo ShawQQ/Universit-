@@ -4,14 +4,17 @@ public abstract class Articolo {
 	private final double prezzoUnitario;
 	private int quantita;
 	private final double um;
+	private final UM umType;
 
-	public Articolo(double um, double prezzoUnitario, int quantita){
+	public Articolo(double um, double prezzoUnitario, int quantita, UM umType){
 		if(prezzoUnitario <= 0) throw new IllegalArgumentException("Il prezzo non puo' essere minore di 0");
 		if(quantita <= 0) throw new IllegalArgumentException("La quantita' non puo' essere minore di 0");
 		if(um <= 0) throw new IllegalArgumentException("La misura non puo' essere minore di 0");
+		if(umType == null) throw new IllegalArgumentException("L'unita' di misura non puo' essere null");
 		this.prezzoUnitario = prezzoUnitario;
 		this.quantita = quantita;
 		this.um = um;
+		this.umType = umType;
 	}
 
 	public double getPrezzoUnitario(){
@@ -36,6 +39,9 @@ public abstract class Articolo {
 	public double getTotal(int qta){
 		return this.getPrezzoUnitario() * qta;
 	}
+	public String getUmName(){
+		return this.umType.toString();
+	}
 
 	/**
 	 * Due articoli sono uguali se sono lo stesso tipo di articolo e hanno la stessa unita' di misura e lo stesso prezzo
@@ -46,6 +52,9 @@ public abstract class Articolo {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Articolo articolo = (Articolo) o;
-		return Double.compare(articolo.um, um) == 0 && Double.compare(articolo.prezzoUnitario, prezzoUnitario) == 0;
+		return
+				Double.compare(articolo.um, um) == 0 &&
+				Double.compare(articolo.prezzoUnitario, prezzoUnitario) == 0 &&
+				articolo.umType.equals(umType);
 	}
 }
