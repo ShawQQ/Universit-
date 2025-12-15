@@ -43,8 +43,7 @@ public class Catalogo {
 		if(articolo == null) throw new NullPointerException("Articolo non puo' essere null");
 		int articoloIndex = this.contains(articolo);
 		if(articoloIndex != -1){
-			int currentQta = this.articoli[articoloIndex].getQuantita();
-			this.articoli[articoloIndex].setQuantita(articolo.getQuantita() + currentQta);
+			this.articoli[articoloIndex].updateQuantita(articolo.getQuantita());
 		}else{
 			if(this.isFull()) return false;
 			this.articoli[this.currentArticoli++] = articolo;
@@ -71,7 +70,7 @@ public class Catalogo {
 		if(art.getQuantita() < articolo.getQuantita())
 			throw new IllegalArgumentException("La quantita richiesta non è disponibile");
 		double total = art.getTotal(articolo.getQuantita());
-		art.setQuantita(art.getQuantita() - articolo.getQuantita());
+		art.updateQuantita(-articolo.getQuantita());
 		if(art.getQuantita() == 0){
 			this.removeElement(articoloIndex);
 		}

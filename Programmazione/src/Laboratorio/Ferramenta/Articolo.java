@@ -28,6 +28,9 @@ public abstract class Articolo {
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
+    public void updateQuantita(int quantita){
+        this.setQuantita(this.quantita + quantita);
+    }
 
 	public double getUm() {
 		return um;
