@@ -21,7 +21,7 @@ public class Coda implements ICoda {
 	}
 
 	public boolean inserimento(Visita v) {
-		if(this.currentIndex == this.queue.length) return false;
+		if(v == null || this.currentIndex == this.queue.length) return false;
 		this.queue[this.currentIndex++] = v;
 		return true;
 	}
