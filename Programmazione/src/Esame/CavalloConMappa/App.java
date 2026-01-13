@@ -1,4 +1,4 @@
-package Esame.Cavallo;/*
+package Esame.CavalloConMappa;/*
     Implementare due classi:
     Cavallo.java
     CorsaDiCavalli.java
@@ -31,7 +31,6 @@ package Esame.Cavallo;/*
 
     Non e' permesso l'uso delle classi della libreria standard di java, salvo String e le sottoclassi di Exception
 */
-
 
 
 public class App {
