@@ -8,7 +8,7 @@ public class Cavallo {
 
 	/**
 	 * Instanzia un nuovo cavallo. Un cavallo &grave; identificato unicovamente dal suo nome, che deve essere pi&ugrave;
-	 * lungo di 4 lettere e pu&ograve; contenere solo caratteri alfabetici. Inoltre un cavallo &grave; caratterizzato
+	 * lungo di 4 lettere e pu&ograve; contenere solo caratteri alfabetici. Inoltre un cavallo &egrave; caratterizzato
 	 * dalle seguente propriet&agrave;
 	 * <ul>
 	 *     <li>Et&agrave; del cavallo, che non pu&ograve; essere minore di 5</li>
@@ -23,6 +23,8 @@ public class Cavallo {
 	 */
 	public Cavallo(String nome, int eta, int numeroVittorie, int numeroPartecipazioni){
 		if(eta < 5) throw new IllegalArgumentException("Eta non valida");
+		if(numeroPartecipazioni < 0) throw new IllegalArgumentException("Numero partecipazioni non valida");
+		if(numeroVittorie < 0) throw new IllegalArgumentException("Numero vittorie non valido");
 		if(!isValidName(nome)) throw new IllegalArgumentException("Nome non valido");
 		this.nome = nome;
 		this.eta = eta;
@@ -78,6 +80,7 @@ public class Cavallo {
 	}
 
 	private boolean isValidName(String nome) {
+		if(nome == null) return false;
 		if(nome.length() < 4) return false;
 		for(int i = 0; i < nome.length(); i++){
 			if(!Character.isAlphabetic(nome.charAt(i))) return false;

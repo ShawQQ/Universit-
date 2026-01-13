@@ -3,13 +3,13 @@ package Esame.Cavallo;
 public class CorsaDiCavalli {
 	private boolean hasFinished;
 	private boolean hasStarted;
-	private Cavallo[] cavalli;
-	private float[] currentDistance;
+	private final Cavallo[] cavalli;
+	private final float[] currentDistance;
 	private int currentCavalli;
 	private final float length;
 
 	/**
-	 * Instanzia una nuova corsa di cavalli. Una corsa di cavalli &grave; caratterizzata da
+	 * Instanzia una nuova corsa di cavalli. Una corsa di cavalli &egrave; caratterizzata da
 	 * <ul>
 	 *     <li>I cavalli che la corrono</li>
 	 *     <li>La sua lunghezza</li>
@@ -40,15 +40,15 @@ public class CorsaDiCavalli {
 	}
 
 	/**
-	 * Aggiungi, se possibile, un cavallo alla corsa attuale. Un cavallo pu&ograve; venire aggiunnto se:
+	 * Aggiungi, se possibile, un cavallo alla corsa attuale. Un cavallo pu&ograve; venire aggiunto se:
 	 * <ul>
 	 *     <li>La gara non &egrave; gi&agrave; iniziata</li>
 	 *     <li>La gara non risulta piena</li>
-	 *     <li>Il cavallo non &grave; gi&agrave; presente all'interno della gara</li>
+	 *     <li>Il cavallo non &egrave; gi&agrave; presente all'interno della gara</li>
 	 * </ul>
 	 * @param c cavallo da aggiungere
-	 * @throws IllegalArgumentException se c &grave; null o la gara &grave; gi&grave; iniziata
-	 * @return true se il cavallo &grave; stato aggiunto, false altrimenti
+	 * @throws IllegalArgumentException se c &egrave; null o la gara &egrave; gi&grave; iniziata
+	 * @return true se il cavallo &egrave; stato aggiunto, false altrimenti
 	 */
 	public boolean aggiungiCavallo(Cavallo c){
 		if(c == null) throw new IllegalArgumentException("Cavallo non valido");
@@ -61,12 +61,12 @@ public class CorsaDiCavalli {
 	}
 
 	/**
-	 * Avanza un cavallo nel percorso di gara. Se la gara non &grave; iniziata, la inizia. Se il cavallo supera
+	 * Avanza un cavallo nel percorso di gara. Se la gara non &egrave; iniziata, la inizia. Se il cavallo supera
 	 * il traguardo la conclude
 	 * @param nomeCavallo cavallo da avanzare
 	 * @param distanza percorsa dal cavallo
-	 * @throws IllegalArgumentException se il cavallo non &grave; presente, se la gara &grave; finita o se la distanza
-	 * &grave; minore o uguale a 0
+	 * @throws IllegalArgumentException se il cavallo non &egrave; presente, se la gara &egrave; finita o se la distanza
+	 * &egrave; minore o uguale a 0
 	 */
 	public void avanzaCavallo(String nomeCavallo, float distanza){
 		int cavalloIndex = this.contains(nomeCavallo);
@@ -88,7 +88,7 @@ public class CorsaDiCavalli {
 	}
 
 	/**
-	 * Controlla se un cavallo &grave; presente all'interno della gara, e nel caso ritorna il suo indice
+	 * Controlla se un cavallo &egrave; presente all'interno della gara, e nel caso ritorna il suo indice
 	 * @param nomeCavallo nome del cavallo
 	 * @return indice del cavallo se presente, -1 altrimenti
 	 */
