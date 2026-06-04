@@ -26,7 +26,9 @@ function loadQuestions(){
 			container.append(content_container);
 			wrapper.append(container);
 		});
-		MathJax.typeset();
+		MathJax.typesetPromise().then(() => {
+
+		}).catch(e => console.log(e));
 	});
 }
 
