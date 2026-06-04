@@ -1,0 +1,90 @@
+{
+  "Section": "proof",
+  "Questions": [
+    {
+      "Number": "3.1",
+      "Date": "20/06/2019, 17/06/2022, 09/06/2023, 17/09/2024",
+      "Text": "Enunciare formalmente e dimostrare la non calcolabilità del Problema dell'Arresto delle Macchine di Turing."
+    },
+    {
+      "Number": "3.2",
+      "Date": "23/07/2019, 27/09/2021, 07/03/2022",
+      "Text": "Enunciare formalmente e dimostrare l'equivalenza tra Automi a Stati Finiti Deterministici e Automi a Stati Finiti non Deterministici."
+    },
+    {
+      "Number": "3.3",
+      "Date": "13/09/2019, 28/09/2020, 09/02/2021, 03/10/2022, 23/06/2023, 08/07/2024",
+      "Text": "Enunciare formalmente e dimostrare il Teorema di Rice. Mostrare un esempio di insieme e l'applicazione del Teorema di Rice."
+    },
+    {
+      "Number": "3.4",
+      "Date": "27/09/2019, 07/09/2022, 07/02/2023, 27/09/2024",
+      "Text": "Enunciare formalmente e dimostrare il Teorema di Post. Mostrare un esempio di applicazione del Teorema di Post."
+    },
+    {
+      "Number": "3.5",
+      "Date": "07/02/2020",
+      "Text": "Enunciare formalmente la definizione di insieme ricorsivamente enumerabile. Si dimostri che ogni insieme ricorsivo è anche ricorsivamente enumerabile. In particolare, se non è vuoto (risp. non finito) può essere enumerato mediante una funzione calcolabile monotona crescente (risp. strettamente crescente)."
+    },
+    {
+      "Number": "3.6",
+      "Date": "05/03/2020, 19/09/2022, 06/02/2024, 26/02/2025",
+      "Text": "Enunciare formalmente l'esistenza della MdT Universale e darne la dimostrazione."
+    },
+    {
+      "Number": "3.7",
+      "Date": "18/06/2020",
+      "Text": "Si enunci e si dimostri formalmente il teorema che lega gli insiemi semidecidibili, il dominio e il codominio delle funzioni calcolabili."
+    },
+    {
+      "Number": "3.8",
+      "Date": "01/07/2020, 20/07/2020, 07/09/2020, 15/07/2021, 15/07/2022",
+      "Text": "Si enunci e si dimostri formalmente il pumping lemma per i linguaggi liberi dal contesto."
+    },
+    {
+      "Number": "3.9",
+      "Date": "15/11/2021, 27/06/2022, 28/02/2023, 20/11/2024",
+      "Text": "Si enunci e si dimostri formalmente il pumping lemma per i linguaggi regolari."
+    },
+    {
+      "Number": "3.10",
+      "Date": "22/06/2021",
+      "Text": "Si elenchino caratterizzazioni degli insiemi ricorsivamente enumerabili e se ne diano le formali dimostrazioni."
+    },
+    {
+      "Number": "3.11",
+      "Date": "01/07/2021",
+      "Text": "Si enunci e si dimostri formalmente il Teorema di Kleene."
+    },
+    {
+      "Number": "3.12",
+      "Date": "06/09/2021, 21/02/2022, 12/07/2023, 24/07/2024",
+      "Text": "Enunciare i requisiti del concetto di algoritmo."
+    },
+    {
+      "Number": "3.13",
+      "Date": "07/02/2022",
+      "Text": "Enunciare e dimostrare formalmente le relazioni tra insiemi ricorsivi, insiemi ricorsivamente enumerabili e insiemi non ricorsivamente enumerabili."
+    },
+    {
+      "Number": "3.14",
+      "Date": "08/09/2023",
+      "Text": "Enunciare formalmente e dimostrare caratterizzazioni alternative degli insiemi ricorsivamente enumerabili."
+    },
+    {
+      "Number": "3.15",
+      "Date": "19/09/2023, 28/09/2023",
+      "Text": "Enunciare formalmente e dimostrare la decidibilità, semidecidibilità o indecidibilità dell'insieme delle funzioni totali."
+    },
+    {
+      "Number": "3.16",
+      "Date": "27/02/2024, 24/06/2024",
+      "Text": "Dare la definizione formale di Automa a Stati Finiti Deterministico e linguaggio accettato dall'automa."
+    },
+    {
+      "Number": "3.17",
+      "Date": "05/02/2025",
+      "Text": "Dimostrare formalmente che dato un linguaggio $L$, se sia $L$, sia il suo complemento sono ricorsivamente enumerabili, allora $L$ è ricorsivo."
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "Section": "grammar",
+  "Questions": [
+    {
+      "Number": "4.1",
+      "Date": "20/06/2019, 15/11/2021",
+      "Text": "Dato il linguaggio $L$ su $\\{0,1\\}^*$ costituito da stringhe tali che ogni 0 ha un 1 alla sua destra:\na) Dire a quale classe nella gerarchia di Chomsky il linguaggio $L$ appartiene e trovare la grammatica corrispondente.\nb) Trovare l'automa che lo riconosce."
+    },
+    {
+      "Number": "4.2",
+      "Date": "23/07/2019",
+      "Text": "Sia $L$ il linguaggio generato da una grammatica con le seguenti produzioni:\n$$S \\to \\lambda \\mid aScS \\mid SS$$\nDire a quale classe di linguaggi nella Gerarchia di Chomsky appartiene $L$. Può un sottoinsieme infinito di $L$ essere regolare?"
+    },
+    {
+      "Number": "4.3",
+      "Date": "13/09/2019",
+      "Text": "Sia $L$ il linguaggio denotato dalla seguente espressione regolare $(a+b)^*$. Scrivere una grammatica a struttura di frase che genera lo stesso linguaggio e l'automa che lo riconosce."
+    },
+    {
+      "Number": "4.4",
+      "Date": "27/09/2019",
+      "Text": "Dire a quale classe nella Gerarchia di Chomsky appartiene il linguaggio\n$$L = \\{a^n a^n \\mid a \\in A, n \\in \\mathbb{N}\\}$$"
+    },
+    {
+      "Number": "4.5",
+      "Date": "16/12/2019",
+      "Text": "Si consideri la seguente grammatica $G = (N = \\{S,X\\}, T = \\{a,b,c\\}, P, S)$ con produzioni\n$$S \\to X \\mid \\lambda$$\n$$X \\to aXa \\mid bXb \\mid c$$\nSvolgere ciascuno dei seguenti punti:\n1. Di che tipo è la grammatica?\n2. Mostrare una derivazione per \"aaba\".\n3. Mostrare una derivazione per \"abbcbba\".\n4. Sono ammesse stringhe vuote?\n5. Qual è il linguaggio generato da $G$?"
+    },
+    {
+      "Number": "4.6",
+      "Date": "22/06/2017, 16/12/2019",
+      "Text": "Dato il seguente ASFND:\n<table><thead><tr><th></th><th>a</th><th>b</th><th>c</th></tr></thead><tbody><tr><td>$[q_S]$</td><td>$\\{q_A\\}$</td><td></td><td>$\\{q_C\\}$</td></tr><tr><td>$[q_A]$</td><td>$\\{q_A\\}$</td><td></td><td>$\\{q_C\\}$</td></tr><tr><td>$[q_C]$</td><td></td><td>$\\{q_C, q_F\\}$</td><td></td></tr><tr><td>$[q_C, q_F]$</td><td></td><td>$\\{q_C, q_F\\}$</td><td></td></tr></tbody></table>\n\n- Determinare il corrispondente ASFD.\n- Definire il linguaggio riconosciuto."
+    },
+    {
+      "Number": "4.7",
+      "Date": "07/02/2020, 06/09/2021",
+      "Text": "Scrivere una grammatica a struttura di frase (06/09/2021: regolare) sull'alfabeto $\\{0,1\\}$, che denota il linguaggio $L$ formato da tutte le stringhe che contengono la stringa 00 come prefisso oppure la stringa 110 come suffisso.\n- Costruire l'automa a stati finiti che riconosce $L$.\n- Definire una espressione regolare che definisce $L$."
+    },
+    {
+      "Number": "4.8",
+      "Date": "05/03/2020",
+      "Text": "Quale tipologia di linguaggi sono generati da grammatiche con produzioni della forma:\n$$A \\to wB$$\n$$B \\to w$$\ndove $A$ e $B$ sono simboli non terminali e $w$ è una stringa di simboli terminali su un dato alfabeto."
+    },
+    {
+      "Number": "4.9",
+      "Date": "18/06/2020",
+      "Text": "Dire a quale classe appartiene il linguaggio di tutte le stringhe sull'alfabeto $\\{a,b,c\\}$ che contengono un numero dispari di $a$, un numero dispari di $b$ e un numero pari di $c$."
+    },
+    {
+      "Number": "4.10",
+      "Date": "01/07/2020, 20/07/2020",
+      "Text": "Si consideri l'insieme di tutte le stringhe di parentesi bilanciate. Esempio: le stringhe di parentesi $(())$, $()()$, $(()(()))$ sono stringhe di parentesi bilanciate. Dire a quale classe di linguaggi appartiene l'insieme di stringhe di parentesi bilanciate."
+    },
+    {
+      "Number": "4.11",
+      "Date": "07/09/2020",
+      "Text": "Si consideri l'insieme di tutte le stringhe bilanciate \"begin\" e \"end\". Esempio: le stringhe \"begin begin end end\", \"begin end begin end\", \"begin begin end begin begin end end end\" sono stringhe bilanciate di \"begin\" e \"end\". Dire a quale classe di linguaggi appartiene l'insieme di stringhe di \"begin\" e \"end\" bilanciate."
+    },
+    {
+      "Number": "4.12",
+      "Date": "28/09/2020",
+      "Text": "A quale classe di linguaggi appartiene l'insieme di stringhe:\n$$L = \\{0^n 1^m 0^{m+n} \\mid m, n \\geq 0\\}$$"
+    },
+    {
+      "Number": "4.13",
+      "Date": "09/02/2021",
+      "Text": "Si consideri la seguente grammatica $G = (N = \\{S,X,Y\\}, T = \\{a,b,c\\}, P, S)$ e le seguenti produzioni $P$:\n$$S \\to X \\mid \\lambda$$\n$$X \\to aXa \\mid Y$$\n$$Y \\to bYb \\mid c$$\nSvolgere ciascuno dei seguenti punti:\n1. A quale classe di grammatica appartiene la grammatica $G$?\n2. Mostrare, se esiste, una derivazione per \"aaba\".\n3. Mostrare, se esiste, una derivazione per \"abbcbba\".\n4. È ammessa la stringa vuota?\n5. Quale è il linguaggio generato da $G$?"
+    },
+    {
+      "Number": "4.14",
+      "Date": "26/02/2021",
+      "Text": "Sia $L$ il linguaggio generato dalla seguente espressione regolare $(a+b)^*$.\n- Dire a quale classe di linguaggi appartiene $L$.\n- Scrivere una grammatica a struttura di frase che genera $L$.\n- Scrivere l'automa che riconosce $L$."
+    },
+    {
+      "Number": "4.15",
+      "Date": "22/06/2021",
+      "Text": "Dire a quale classe di linguaggi sull'alfabeto $\\{0,1\\}$ appartengono gli insiemi di stringhe tali che le occorrenze di 0 e di 1 soddisfano i seguenti requisiti:\n- ci sono almeno due 0 consecutivi e non vi sono mai due 1 consecutivi;\n- il numero di occorrenze di 0 è uguale al numero di occorrenze di 1."
+    },
+    {
+      "Number": "4.16",
+      "Date": "01/07/2021",
+      "Text": "Dire a quale classe di linguaggi sull'alfabeto $A = \\{0,1\\}$ appartiene l'insieme di stringhe:\n$$L = \\{x \\in A^* \\mid x \\text{ è palindroma}\\}$$\nNB: Ricordiamo che una stringa è palindroma se è indifferente leggerla da destra a sinistra o da sinistra verso destra."
+    },
+    {
+      "Number": "4.17",
+      "Date": "15/07/2021, 21/02/2022, 06/02/2024",
+      "Text": "Dire a quale classe di linguaggi sull'alfabeto $A = \\{0,1,\\ldots,9\\}$ appartiene l'insieme di stringhe:\n$$L = \\{x \\in A^* \\mid x \\bmod 5 = 0\\}$$\nNB: $\\bmod$ rappresenta l'operazione che restituisce il resto della divisione intera tra i numeri a cui è applicata."
+    },
+    {
+      "Number": "4.18",
+      "Date": "",
+      "Text": "Si consideri il linguaggio $L$ sull'alfabeto $\\{a,b,0,1\\}$ contenente tutte le parole non vuote tali che mai occorrono due simboli consecutivi uguali. A quale classe appartiene il linguaggio $L$?"
+    },
+    {
+      "Number": "4.19",
+      "Date": "07/02/2022",
+      "Text": "Si consideri il linguaggio $L$ sull'alfabeto $\\{0,1\\}$ contenente tutte e sole le stringhe tali che il penultimo simbolo è 0. A quale classe appartiene il linguaggio $L$?"
+    },
+    {
+      "Number": "4.20",
+      "Date": "07/03/2022",
+      "Text": "Dire a quale classe di linguaggi sull'alfabeto $A = \\{0,1\\}$ appartiene l'insieme di stringhe:\n$$L = \\{0^n 1^m \\mid n, m \\in \\mathbb{N} \\wedge n < m\\}$$"
+    },
+    {
+      "Number": "4.21",
+      "Date": "17/06/2022",
+      "Text": "Dato il linguaggio $L$ su $\\{0,1\\}^*$ costituito da stringhe di 0 e di 1 alternati:\na) Dire a quale classe della gerarchia di Chomsky il linguaggio $L$ appartiene e trovare la grammatica corrispondente.\nb) Trovare l'automa che lo riconosce.\nc) Trovare una espressione regolare che lo riconosce."
+    },
+    {
+      "Number": "4.22",
+      "Date": "27/06/2022",
+      "Text": "Dato il linguaggio $L$ su $\\{0,1\\}^*$ costituito da stringhe che rappresentano un numero dispari in notazione binaria:\na) Dire a quale classe della gerarchia di Chomsky il linguaggio $L$ appartiene e trovare la grammatica corrispondente.\nb) Trovare l'automa che lo riconosce.\nc) Trovare una espressione regolare che lo riconosce."
+    },
+    {
+      "Number": "4.23",
+      "Date": "15/07/2022",
+      "Text": "Dato il linguaggio $L$ su $\\{0,1\\}^*$ costituito dalle stringhe che contengono $01$:\na) Dire a quale classe della gerarchia di Chomsky il linguaggio $L$ appartiene e trovare la grammatica corrispondente.\nb) Trovare l'automa che lo riconosce.\nc) Trovare una espressione regolare che lo riconosce."
+    },
+    {
+      "Number": "4.24",
+      "Date": "07/09/2022",
+      "Text": "Dire a quale classe nella Gerarchia di Chomsky appartiene il linguaggio:\n$$L = \\{0^n 1^n 0^m 1^m \\mid n, m \\in \\mathbb{N}\\}$$\nDire se il linguaggio $L$ è esprimibile nel linguaggio delle espressioni regolari."
+    },
+    {
+      "Number": "4.25",
+      "Date": "19/09/2022",
+      "Text": "Si fissi un $k \\in \\mathbb{N}$ a scelta. Dire a quale classe della Gerarchia di Chomsky appartiene il linguaggio $L = \\{0^n 1^n \\mid n \\leq k\\}$. Dire se il linguaggio $L$ è esprimibile nel linguaggio delle espressioni regolari."
+    },
+    {
+      "Number": "4.26",
+      "Date": "03/10/2022",
+      "Text": "Si fissi un $k \\in \\mathbb{N}$ a scelta. Dire a quale classe della Gerarchia di Chomsky appartiene il linguaggio\n$$L = \\{a^n b^m c^n \\mid n \\leq k, m \\in \\mathbb{N}\\}$$\nDire se il linguaggio $L$ è esprimibile nel linguaggio delle espressioni regolari."
+    },
+    {
+      "Number": "4.27",
+      "Date": "07/02/2023",
+      "Text": "Si consideri la grammatica $G = (N = \\{S,A,B\\}, T = \\{a,b\\}, P, S)$ e le seguenti produzioni in $P$:\n$$S \\to A \\mid bB$$\n$$A \\to bA \\mid aB \\mid a$$\n$$B \\to bB \\mid b \\mid a$$\nSvolgere ciascuno dei seguenti punti:\n- Mostrare una derivazione per $aba$, se possibile.\n- Mostrare una derivazione per $abab$, se possibile.\n- Qual è il linguaggio generato da $G$?\n- A quale classe appartiene il linguaggio generato da $G$?\n- A quale classe appartiene la grammatica $G$?"
+    },
+    {
+      "Number": "4.28",
+      "Date": "28/02/2023",
+      "Text": "Sia $L$ il linguaggio generato dalla seguente espressione regolare\n$$E = a^*(ba^*)^*$$\nSvolgere ciascuno dei seguenti punti:\n- Qual è il linguaggio denotato da $E$?\n- A quale classe appartiene il linguaggio denotato da $E$?\n- Scrivere una grammatica a struttura di frase che genera lo stesso linguaggio.\n- Scrivere l'automa che accetta lo stesso linguaggio."
+    },
+    {
+      "Number": "4.29",
+      "Date": "09/06/2023",
+      "Text": "Scrivere un automa a stati finiti che accetta tutte e sole le stringhe con un numero pari di 0 e un numero pari di 1. Dire a quale classe appartiene il linguaggio accettato da tale automa."
+    },
+    {
+      "Number": "4.30",
+      "Date": "23/06/2023",
+      "Text": "Scrivere un automa a stati finiti che emette un biglietto dopo che sono stati inseriti 0.60 Euro. L'automa accetta monete da 10 o da 20 centesimi di Euro e non fornisce resto. Dire a quale classe appartiene il linguaggio accettato da tale automa."
+    },
+    {
+      "Number": "4.31",
+      "Date": "12/07/2023",
+      "Text": "Dire a quale classe di linguaggi su $\\{a,b\\}$ appartiene l'insieme di stringhe\n$$L = \\{a^n b^m \\mid n > m\\}$$"
+    },
+    {
+      "Number": "4.32",
+      "Date": "08/09/2023, 19/09/2023, 28/09/2023",
+      "Text": "Progettare un automa a stati finiti che realizzi un distributore automatico di francobolli, accettando monete da 50, 20 e 10 centesimi di Euro. Il prezzo del francobollo è di Euro 0.80 e il distributore può dare un resto di massimo 20 centesimi."
+    },
+    {
+      "Number": "4.33",
+      "Date": "27/02/2024",
+      "Text": "Fissato un numero $k$ qualsiasi, dire se il seguente linguaggio è regolare:\n$$L_1 = \\{a^n b^m \\mid n \\leq k, m \\leq k\\}$$\nE questo?\n$$L_2 = \\{a^k b^n c^m \\mid n \\geq 0, k \\leq n, n \\leq m\\}$$"
+    },
+    {
+      "Number": "4.34",
+      "Date": "24/06/2024",
+      "Text": "Dire a quale classe appartiene il linguaggio $L$, sull'alfabeto $A = \\{a,b\\}$, definito come:\n$$L = \\{w \\in A^* \\mid w \\text{ ha lo stesso numero di } a \\text{ e } b\\}$$"
+    },
+    {
+      "Number": "4.35",
+      "Date": "08/07/2024",
+      "Text": "Si consideri l'alfabeto delle lettere minuscole del linguaggio italiano. Dire a quale classe di linguaggi appartiene l'insieme delle stringhe composte dalle vocali del proprio nome, nel rispetto dell'ordine di apparizione nel nome stesso."
+    },
+    {
+      "Number": "4.36",
+      "Date": "24/07/2024",
+      "Text": "Dire a quale classe di linguaggi sull'alfabeto $\\{0,1\\}$ appartengono gli insiemi di stringhe tali che le occorrenze di 0 e di 1 soddisfano i seguenti requisiti:\n- ci sono almeno due 0 consecutivi e non vi sono mai due 1 consecutivi;\n- il numero di occorrenze di 0 è maggiore o uguale al numero di occorrenze di 1."
+    },
+    {
+      "Number": "4.37",
+      "Date": "17/09/2024",
+      "Text": "Dire a quale classe di linguaggi sull'alfabeto $\\{0,1\\}$ appartengono gli insiemi di stringhe tali che la sottostringa \"00\" non occorra mai né come prefisso né come suffisso delle stringhe del linguaggio."
+    },
+    {
+      "Number": "4.38",
+      "Date": "27/09/2024",
+      "Text": "Si consideri la seguente grammatica $G = (N = \\{S,A\\}, T = \\{a,b\\}, P, S)$ con produzioni\n$$S \\to A \\mid AA \\mid \\lambda$$\n$$A \\to aAb \\mid ab$$\nSvolgere ciascuno dei seguenti punti:\n1. Di che tipo è la grammatica?\n2. Mostrare una derivazione per \"abaabb\".\n3. Mostrare una derivazione per \"aabbab\".\n4. Sono ammesse stringhe vuote?\n5. Qual è il linguaggio generato da $G$?"
+    },
+    {
+      "Number": "4.39",
+      "Date": "20/11/2024",
+      "Text": "Dire a quale classe nella Gerarchia di Chomsky appartiene il linguaggio $L$ sull'alfabeto $\\{0,1\\}$ definito da\n$$L = \\{(01)^n(10)^n \\mid n \\in \\mathbb{N}\\}$$"
+    },
+    {
+      "Number": "4.40",
+      "Date": "05/02/2025, 26/02/2025",
+      "Text": "Dire a quale classe di linguaggi nella Gerarchia di Chomsky appartiene il linguaggio:\n$$L = \\{w \\in \\{0,1\\}^* \\mid \\forall n \\in \\mathbb{N},\\; 2 \\leq 2n \\leq |w| \\Rightarrow w[2n] \\neq w[2n-1]\\}$$\ndove $w[i]$ rappresenta il bit della stringa $w$ alla posizione $i$-esima."
+    },
+    {
+      "Number": "4.41",
+      "Date": "Slides Prof. Re",
+      "Text": "1. Scrivere una espressione regolare che descriva l'insieme $\\{0, 11, 101\\}$.\n2. Scrivere una espressione regolare per stringhe binarie che descriva l'insieme delle stringhe composte solo da simboli 0.\n3. Scrivere una espressione regolare per tutte le stringhe binarie.\n4. Scrivere una espressione regolare per tutte le stringhe binarie che cominciano e finiscono per 1.\n5. Scrivere una espressione regolare per le stringhe binarie che contengono almeno tre 1 consecutivi.\n6. Scrivere una espressione regolare per le stringhe binarie che contengono almeno tre 1.\n7. Scrivere una espressione regolare per le stringhe binarie di lunghezza dispari.\n8. Scrivere una espressione regolare per stringhe di testo che descriva le date in formato GG/MM/AAAA.\n9. Scrivere una espressione regolare per stringhe di testo che descriva i numeri di telefono."
+    }
+  ]
+}

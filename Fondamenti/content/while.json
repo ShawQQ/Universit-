@@ -1,0 +1,160 @@
+{
+  "Section": "while",
+  "Questions": [
+    {
+      "Number": "5.1",
+      "Date": "20/06/2019",
+      "Text": "Fornire la macro-istruzione nel linguaggio WHILE per la divisione con resto di due numeri naturali."
+    },
+    {
+      "Number": "5.2",
+      "Date": "23/07/2019",
+      "Text": "Fornire la macro-istruzione nel linguaggio WHILE per la moltiplicazione tra due naturali. E tra due interi?"
+    },
+    {
+      "Number": "5.3",
+      "Date": "13/09/2019, 27/09/2019, 15/11/2021, 07/02/2023",
+      "Text": "Come è possibile estendere il linguaggio WHILE con un nuovo comando <code>repeat C until E</code> dove $C$ è un comando e $E$ è una espressione booleana. Informalmente, il comando <code>repeat C until E</code> esegue $C$ e poi verifica $E$: se $E$ è falsa ripete $C$, altrimenti esce dal ciclo."
+    },
+    {
+      "Number": "5.4",
+      "Date": "16/12/2019",
+      "Text": "Definire la sintassi del linguaggio WHILE."
+    },
+    {
+      "Number": "5.5",
+      "Date": "07/02/2020",
+      "Text": "Scrivere un programma WHILE che presi due numeri in input controlli se il primo è multiplo del secondo."
+    },
+    {
+      "Number": "5.6",
+      "Date": "05/03/2020, 18/06/2020",
+      "Text": "È possibile estendere il linguaggio WHILE con un nuovo comando\n$$\\text{read}(x_1, \\ldots, x_n)$$\nche prende in input $n$ lettere o cifre e le assegna alle variabili $x_1, \\ldots, x_n$, rispettivamente?"
+    },
+    {
+      "Number": "5.7",
+      "Date": "01/07/2020, 20/07/2020, 07/09/2020, 28/02/2023, 19/09/2023, 28/09/2023, 08/07/2024",
+      "Text": "Si introduca in WHILE il comando\n$$\\text{IntWhile } e \\in I_1, I_2, \\ldots, I_n \\text{ IntDo } i\\text{begin } C_1 \\text{ iend}; \\ldots; i\\text{begin } C_n \\text{ iend}$$\ndove $e$ è una espressione la cui valutazione restituisce un intero, $I_i$ è un intervallo sugli interi, $C_i$ è un comando ($i \\in [1..n]$).\n\nIl comando IntWhile…IntDo esegue il comando $C_i$ finché la valutazione dell'espressione $e$ restituisce un intero nell'intervallo $I_i$. Nel caso in cui la valutazione di $e$ non ricada in alcuno degli intervalli $I_1, \\ldots, I_n$ il comando IntWhile…IntDo termina la sua esecuzione."
+    },
+    {
+      "Number": "5.8",
+      "Date": "28/09/2020, 06/09/2021",
+      "Text": "Scrivere un programma in linguaggio WHILE che legga in input una sequenza di lunghezza ignota a priori di numeri interi positivi. Il programma, a partire dal primo numero introdotto, stampa ogni volta la media aritmetica di tutti i numeri introdotti. Terminare quando il numero inserito è negativo."
+    },
+    {
+      "Number": "5.9",
+      "Date": "09/02/2021",
+      "Text": "Scrivere un programma in linguaggio WHILE che prenda in input una sequenza di caratteri nell'insieme $\\{a,b,c\\}$ e restituisca 1 se la stringa appartiene al linguaggio dell'Esercizio 4.13 (sezione Grammatiche e Automi), 0 altrimenti."
+    },
+    {
+      "Number": "5.10",
+      "Date": "26/02/2021",
+      "Text": "Scrivere un programma in linguaggio WHILE che prenda in input una sequenza di caratteri nell'insieme $\\{a,b,c\\}$ e restituisca 1 se la stringa appartiene al linguaggio dell'Esercizio 4.14 (sezione Grammatiche e Automi), 0 altrimenti."
+    },
+    {
+      "Number": "5.11",
+      "Date": "22/06/2021",
+      "Text": "Si introduca in WHILE il comando\n$$\\text{loop } E \\text{ do } C \\text{ end}$$\ndove $E$ è una espressione aritmetica, la cui valutazione restituisce un intero $I$. La semantica intuitiva del comando loop è di controllare la guardia $E$ e, se è diversa da 0, eseguire $C$ e decrementare la guardia. Dire se il comando loop è esprimibile nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.12",
+      "Date": "01/07/2021",
+      "Text": "Si consideri il comando:\n$$\\text{for } I = E_1 \\text{ to } E_2 \\text{ do } C \\text{ end}$$\ndove $E_1, E_2$ sono espressioni aritmetiche. La semantica intuitiva del for è di eseguire il comando $C$ tante volte quante $E_2 - E_1$. Dire se il comando for è esprimibile nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.13",
+      "Date": "15/07/2021, 06/02/2024",
+      "Text": "Si consideri il comando:\n$$\\text{loopmax } E_1; E_2 \\text{ do } C \\text{ end}$$\nla cui semantica intuitiva consiste nell'eseguire il comando $C$ tante volte quanto vale il massimo tra $E_1$ ed $E_2$ fissato all'inizio. Dire se il comando loopmax è esprimibile nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.14",
+      "Date": "27/09/2021",
+      "Text": "Dire se il comando\n$$\\text{do } C \\text{ while } E$$\ndove $C$ è un comando e $E$ è una espressione booleana è esprimibile nel linguaggio WHILE. Informalmente, il comando <code>do C while E</code> esegue $C$ e poi verifica $E$: se $E$ è falsa ripete $C$, altrimenti esce dal ciclo."
+    },
+    {
+      "Number": "5.15",
+      "Date": "07/02/2022, 21/02/2022",
+      "Text": "Dire se il comando\n$$\\text{alternate } E_1 \\text{ by } E_2 \\text{ do } C_1; C_2 \\text{ endalt}$$\nla cui semantica intuitiva consiste nell'eseguire $C_1$ un numero di volte pari a $E_1 / E_2$ e $C_2$ un numero di volte pari a $E_1 \\bmod E_2$ è esprimibile nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.16",
+      "Date": "07/03/2022",
+      "Text": "Dire se il comando\n$$\\text{alternate } E \\text{ times } C_1; C_2 \\text{ endalt}$$\ncon le seguenti due semantiche intuitive:\n1. viene eseguito il comando $C_1; C_2$ tante volte quanto vale inizialmente $E$;\n2. viene eseguito il comando $C_1$ tante volte quanto vale $E_1/E_2$ e successivamente il comando $C_2$ tante volte quanto vale $E_1 \\bmod E_2$\nè esprimibile nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.17",
+      "Date": "17/06/2022, 20/11/2024",
+      "Text": "Dire se il comando:\n$$\\text{do } C \\text{ until } X \\text{ is } Y \\text{ end}$$\ndove $C$ è un comando, $X$ e $Y$ sono variabili sui numeri naturali è esprimibile nel linguaggio WHILE. La semantica intuitiva è di eseguire $C$, poi se $X$ ed $Y$ hanno valori diversi ripetere $C$, altrimenti uscire dal ciclo."
+    },
+    {
+      "Number": "5.18",
+      "Date": "27/06/2022, 27/02/2024",
+      "Text": "Dire se il comando:\n$$\\text{case } E \\text{ do } C_1; C_2; C_3 \\text{ end}$$\ndove $E$ è una espressione aritmetica sui numeri naturali e $C_1, C_2, C_3$ sono comandi è esprimibile nel linguaggio WHILE. La semantica intuitiva del comando case è quella di valutare $E$ e se il valore di $E$ è 1 si esegua $C_1$, se il valore di $E$ è 2 si esegua $C_2$, se il valore di $E$ è 3 si esegua $C_3$. Per tutti gli altri valori si esca dal case."
+    },
+    {
+      "Number": "5.19",
+      "Date": "15/07/2022",
+      "Text": "Dire se il comando:\n$$\\text{mul } X \\text{ less } Y \\text{ end}$$\ndove $X$ e $Y$ sono variabili sui numeri naturali è esprimibile nel linguaggio WHILE. La semantica intuitiva del comando è di dare all'esterno i multipli del valore della variabile $X$ che sono inferiori al valore della variabile $Y$."
+    },
+    {
+      "Number": "5.20",
+      "Date": "07/09/2022",
+      "Text": "Dire se è possibile estendere il linguaggio WHILE con un nuovo comando\n$$\\text{WHILESUM0 } C$$\ndove $C$ è un comando. Informalmente, il comando WHILESUM0 C esegue ciclicamente il comando $C$. Ad ogni ciclo legge un numero intero dall'esterno e lo somma a quelli precedentemente letti. Il ciclo termina quando la somma è 0."
+    },
+    {
+      "Number": "5.21",
+      "Date": "19/09/2022",
+      "Text": "Dire se è possibile estendere il linguaggio WHILE con un nuovo comando\n$$\\text{WParDis } E; C_1; C_2$$\ndove $E$ è una espressione aritmetica e $C_1, C_2$ sono comandi. Informalmente, il comando WParDis $E; C_1; C_2$ — ad ogni ciclo — valuta l'espressione aritmetica $E$ ed esegue $C_1$ se la valutazione è pari, $C_2$ se la valutazione è dispari."
+    },
+    {
+      "Number": "5.22",
+      "Date": "03/10/2022",
+      "Text": "Dire se è possibile estendere il linguaggio WHILE con un nuovo comando\n$$\\text{ParDis } E; C_1; C_2$$\ndove $E$ è una espressione aritmetica e $C_1, C_2$ sono comandi. Informalmente, il comando ParDis $E; C_1; C_2$ valuta l'espressione aritmetica $E$ ed esegue ciclicamente $C_1$ infinite volte se la valutazione è pari, esegue ciclicamente $C_2$ infinite volte se la valutazione è dispari."
+    },
+    {
+      "Number": "5.23",
+      "Date": "09/06/2023, 27/09/2024",
+      "Text": "Si dica se e come il comando:\n$$\\text{for } I := 1 \\text{ to } N \\text{ do } C$$\nche esegue il comando $C$ per $N \\in \\mathbb{N}$ volte, può essere codificato nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.24",
+      "Date": "09/06/2023",
+      "Text": "Scrivere (se possibile) un programma nel linguaggio WHILE che dati in input due naturali che rappresentano rispettivamente il tasso di propagazione di un virus (quante nuove persone ogni giorno si ammalano per ogni persona già ammalata) e la quantità di persone di una popolazione, dica quanti giorni sono necessari perché sia ammalata almeno la metà della popolazione considerando che all'inizio ci sia una sola persona ammalata."
+    },
+    {
+      "Number": "5.25",
+      "Date": "12/07/2023",
+      "Text": "Dire se è possibile estendere il linguaggio WHILE con un comando\n$$\\text{fix } X := 0 \\text{ in } C$$\ndove $X$ è una variabile e $C$ un comando. Informalmente, il comando fix inizializza una variabile a 0 e quindi esegue $C$: se il nuovo valore di $X$ (ottenuto eseguendo $C$) è uguale al valore precedente di $X$ il ciclo termina, altrimenti si ripete questa operazione fintanto che il valore $X$ non smette di variare."
+    },
+    {
+      "Number": "5.26",
+      "Date": "08/09/2023",
+      "Text": "Si dica se e come il comando\n$$\\text{ite } I := 1 \\text{ to } N \\text{ do } C$$\nche esegue il comando $C$ per $N \\in \\mathbb{N}$ volte, può essere codificato nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.27",
+      "Date": "24/06/2024",
+      "Text": "Dire se l'istruzione\n$$\\text{for } (\\text{STATEMENT}_1; I; \\text{STATEMENT}_2)\\, C \\text{ end}$$\ndove:\n- $I$ è un contatore sull'insieme dei numeri naturali;\n- $\\text{STATEMENT}_1$ è una espressione aritmetica che determina il valore iniziale per il contatore $I$;\n- $\\text{STATEMENT}_2$ è una espressione aritmetica che determina il valore finale per il contatore $I$;\n- $C$ è un comando WHILE.\n\nè esprimibile nel linguaggio WHILE."
+    },
+    {
+      "Number": "5.28",
+      "Date": "24/07/2024",
+      "Text": "Si introduca in WHILE il comando:\n$$\\text{max } E_1; E_2 \\text{ loop } C \\text{ end}$$\nla cui semantica intuitiva consiste nell'eseguire il comando $C$ tante volte quanto vale il massimo tra $E_1$ ed $E_2$ fissato all'inizio."
+    },
+    {
+      "Number": "5.29",
+      "Date": "17/09/2024",
+      "Text": "Dire se è possibile estendere il linguaggio WHILE con un comando:\n$$X = E\\,?\\,E_1 : E_2$$\ndove $X$ è una variabile, $E$ è una espressione Booleana ed $E_1, E_2$ sono espressioni aritmetiche. Informalmente, questo operatore ternario assegna alla variabile $X$ il risultato di $E_1$ se la condizione in $E$ è verificata, altrimenti gli assegna il valore di $E_2$."
+    },
+    {
+      "Number": "5.30",
+      "Date": "05/02/2025",
+      "Text": "Si dica se (e come) il comando:\n$$\\text{do } C\\text{-} \\text{ while } E$$\ndove $C$ è un comando ed $E$ è una espressione aritmetica, può essere codificato nel linguaggio WHILE. Il comportamento intuitivo è il seguente: si esegue $C$, poi si valuta l'espressione aritmetica $E$. Se la valutazione è diversa da 0, il corpo del ciclo $C$ viene eseguito di nuovo e successivamente la condizione $E$ è valutata. Se la valutazione di $E$ è uguale a 0 si esce."
+    },
+    {
+      "Number": "5.31",
+      "Date": "26/02/2025",
+      "Text": "Si dica se (e come) il comando:\n$$\\text{while } E \\text{ count } C \\text{ in } X$$\ndove $E$ è una espressione Booleana, $C$ è un comando e $X$ è una variabile sui numeri naturali può essere codificato nel linguaggio WHILE. Il comportamento intuitivo è il seguente: finché l'espressione Booleana $E$ è vera si esegue $C$ e poi si verifica nuovamente $E$, altrimenti si esce dal ciclo. Al termine del ciclo, la variabile $X$ deve contenere il numero di iterazioni svolte."
+    }
+  ]
+}

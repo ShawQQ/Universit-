@@ -1,0 +1,23 @@
+body{
+	font-size: 18px;
+	padding: 15px 0;
+}
+div{
+	padding: 15px 0;
+}
+table{
+	border: 1px solid;
+	border-collapse: collapse;
+}
+th, td{
+	border: 1px solid;
+	padding: 10px;
+}
+.content-container{
+	margin: 0 auto;
+}
+.info{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}

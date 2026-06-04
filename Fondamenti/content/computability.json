@@ -1,0 +1,200 @@
+{
+  "Section": "computability",
+  "Questions": [
+    {
+      "Number": "2.1",
+      "Date": "20/06/2019",
+      "Text": "Si dimostri l'esistenza o meno di una funzione totale e calcolabile $f : \\mathbb{N}^2 \\to \\mathbb{N}$ tale che per ogni $i$ e $j$, l'$i$-esima Macchina di Turing, sull'input $j$, si ferma se e soltanto se si ferma entro $f(i,j)$ passi."
+    },
+    {
+      "Number": "2.2",
+      "Date": "23/07/2019, 21/02/2022",
+      "Text": "Studiare l'insieme\n$$I = \\{i \\in \\mathbb{N} \\mid \\exists x, y \\text{ tali che } \\varphi_i(x) \\neq \\varphi_i(y)\\}$$"
+    },
+    {
+      "Number": "2.3",
+      "Date": "13/09/2019",
+      "Text": "Sia data una funzione calcolabile $f : \\mathbb{N} \\to \\mathbb{N}$. Quali sono le proprietà di decidibilità e semidecidibilità dell'immagine di $f$, $\\mathrm{Im}(f)$? Esistono funzioni $f$ tali che $\\mathrm{Im}(f)$ è decidibile?"
+    },
+    {
+      "Number": "2.4",
+      "Date": "27/09/2019",
+      "Text": "Si dica se la funzione $f$ tale che, per ogni $x \\in \\mathbb{N}$\n$$f(x) = \\begin{cases} 1 & \\text{se domani piove} \\\\ 0 & \\text{altrimenti} \\end{cases}$$\nè calcolabile."
+    },
+    {
+      "Number": "2.5",
+      "Date": "07/02/2020",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\exists y \\text{ tali che } \\varphi_x(y) = 5\\}$$"
+    },
+    {
+      "Number": "2.6",
+      "Date": "05/03/2020",
+      "Text": "Studiare l'insieme:\n$$I = \\{(x,y) \\in \\mathbb{N}^2 \\mid \\varphi_x(y)\\uparrow\\}$$"
+    },
+    {
+      "Number": "2.7",
+      "Date": "18/06/2020",
+      "Text": "Studiare l'insieme:\n$$I = \\{(x,y) \\in \\mathbb{N}^2 \\mid \\varphi_x(y) = n_{\\mathrm{NomeCognome}}\\}$$\ndove il naturale $n_{\\mathrm{NomeCognome}}$ corrisponde alla codifica (nella biezione tra naturali e stringhe su un dato alfabeto) del nome e cognome del candidato all'esame."
+    },
+    {
+      "Number": "2.8",
+      "Date": "01/07/2020, 20/07/2020, 07/09/2020",
+      "Text": "Dire se la funzione\n$$f(x) = \\begin{cases} 1 & \\text{se } \\varphi_x(0)\\downarrow \\\\ 0 & \\text{se } \\varphi_x(0)\\uparrow \\end{cases}$$\nè calcolabile."
+    },
+    {
+      "Number": "2.9",
+      "Date": "28/09/2020",
+      "Text": "Studiare l'insieme:\n$$A = \\{x \\in \\mathbb{N} \\mid \\varphi_x(x) = x^2\\}$$\novvero, dire se $A$ e il complemento di $A$ sono ricorsivi/ricorsivamente enumerabili."
+    },
+    {
+      "Number": "2.10",
+      "Date": "09/02/2021",
+      "Text": "Sia $n$ un numero naturale fissato. Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\varphi_x(x) \\text{ converge in } n \\text{ passi}\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.11",
+      "Date": "26/02/2021",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\varphi_x(x) = 10\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.12",
+      "Date": "",
+      "Text": "Dimostrare per diagonalizzazione che l'insieme $I = \\{n \\in \\mathbb{N} \\mid \\varphi_n(n)\\downarrow\\}$ non è decidibile."
+    },
+    {
+      "Number": "2.13",
+      "Date": "",
+      "Text": "Dimostrare per diagonalizzazione che l'insieme $I = \\{n \\in \\mathbb{N} \\mid n \\in \\mathrm{Im}(\\varphi_n)\\}$ non è decidibile."
+    },
+    {
+      "Number": "2.14",
+      "Date": "",
+      "Text": "Si consideri la funzione\n$$f(n) = \\begin{cases} \\varphi_n(n)+1 & \\text{se } \\varphi_n(n)\\downarrow \\\\ \\uparrow & \\text{altrimenti} \\end{cases}$$\na) Dire se $f$ è calcolabile.\nb) Dire se esiste una estensione di $f$ totale calcolabile."
+    },
+    {
+      "Number": "2.15",
+      "Date": "",
+      "Text": "Si consideri la funzione totale $f$:\n$$f(x) = \\begin{cases} \\varphi_x(x)+1 & \\text{se } \\varphi_x \\text{ è totale} \\\\ 0 & \\text{altrimenti} \\end{cases}$$\na) Dimostrare che $f$ non è calcolabile.\nb) Dedurre che l'insieme $\\mathrm{Tot} = \\{x \\in \\mathbb{N} \\mid \\varphi_x \\text{ è totale}\\}$ non è decidibile."
+    },
+    {
+      "Number": "2.16",
+      "Date": "22/06/2021, 28/02/2023",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\exists y \\text{ tale che } \\varphi_x(y) = x\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.17",
+      "Date": "01/07/2021",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\mathrm{Im}(\\varphi_x) = \\emptyset\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.18",
+      "Date": "06/09/2021",
+      "Text": "Sia $A \\subseteq \\mathbb{N}$ un insieme e sia $f : \\mathbb{N} \\to \\mathbb{N}$ una funzione calcolabile. Dimostrare che se $A$ è ricorsivamente enumerabile allora $f(A) = \\{y \\in \\mathbb{N} \\mid \\exists x \\in A, y = f(x)\\}$ è ricorsivamente enumerabile. Vale anche il contrario? Ovvero da $f(A)$ ricorsivamente enumerabile si può dedurre che $A$ è ricorsivamente enumerabile?"
+    },
+    {
+      "Number": "2.19",
+      "Date": "27/09/2021",
+      "Text": "Studiare l'insieme $I = \\{i \\in \\mathbb{N} \\mid 3 \\in \\mathrm{dom}(\\varphi_i)\\}$. E se invece fosse $I = \\{i \\in \\mathbb{N} \\mid \\text{l'insieme dei numeri pari} \\subseteq \\mathrm{dom}(\\varphi_i)\\}$?"
+    },
+    {
+      "Number": "2.20",
+      "Date": "15/11/2021",
+      "Text": "Studiare l'insieme $I = \\{i \\in \\mathbb{N} \\mid 3 \\notin \\mathrm{Im}(\\varphi_i)\\}$."
+    },
+    {
+      "Number": "2.21",
+      "Date": "07/02/2022, 05/02/2025",
+      "Text": "Studiare l'insieme $I = \\{i \\in \\mathbb{N} \\mid \\exists x \\text{ tale che } \\varphi_i(x) = x\\}$."
+    },
+    {
+      "Number": "2.22",
+      "Date": "07/03/2022",
+      "Text": "Sia $f$ una funzione calcolabile. Si dica se l'insieme $I = \\{i \\in \\mathbb{N} \\mid \\varphi_i = f\\}$ è un insieme decidibile. Si dica se l'insieme $I$ è finito o infinito."
+    },
+    {
+      "Number": "2.23",
+      "Date": "17/06/2022, 07/02/2023",
+      "Text": "Si dica se l'insieme $I = \\{i \\in \\mathbb{N} \\mid \\varphi_i \\text{ è una funzione costante}\\}$ è un insieme decidibile. Si dica se l'insieme $I$ è finito o infinito."
+    },
+    {
+      "Number": "2.24",
+      "Date": "27/06/2022",
+      "Text": "Studiare l'insieme $I = \\{i \\in \\mathbb{N} \\mid \\varphi_i \\text{ è una funzione costante}\\}$. Si dica se l'insieme $I$ è finito o infinito."
+    },
+    {
+      "Number": "2.25",
+      "Date": "15/07/2022",
+      "Text": "Studiare l'insieme $I = \\{x \\in \\mathbb{N} \\mid 5 \\notin \\mathrm{Im}(\\varphi_x)\\}$."
+    },
+    {
+      "Number": "2.26",
+      "Date": "07/09/2022",
+      "Text": "Si dimostri che esiste una funzione $f : \\mathbb{N} \\to \\{0,1\\}$ unaria totale e non calcolabile.\n\nNB: non basta definire la funzione, ma occorre anche dimostrare la sua non calcolabilità."
+    },
+    {
+      "Number": "2.27",
+      "Date": "19/09/2022",
+      "Text": "Si dica, giustificando la risposta formalmente, se la funzione $f : \\mathbb{N} \\to \\mathbb{N}$ tale che per ogni $x \\in \\mathbb{N}$\n$$f(x) = \\begin{cases} \\varphi_x(x)+1 & \\text{se } \\varphi_x(x)\\downarrow \\\\ 0 & \\text{altrimenti} \\end{cases}$$\nè calcolabile."
+    },
+    {
+      "Number": "2.28",
+      "Date": "03/10/2022",
+      "Text": "Si dica, giustificando la risposta formalmente, se la funzione $f : \\mathbb{N} \\to \\mathbb{N}$ tale che per ogni $x \\in \\mathbb{N}$\n$$f(x) = \\begin{cases} \\varphi_x(x)+1 & \\text{se } \\varphi_x(x)\\downarrow \\text{ in } x \\text{ passi} \\\\ 0 & \\text{altrimenti} \\end{cases}$$\nè calcolabile."
+    },
+    {
+      "Number": "2.29",
+      "Date": "09/06/2023",
+      "Text": "Studiare l'insieme\n$$I = \\{i \\in \\mathbb{N} \\mid 5 \\notin \\mathrm{Dom}(\\varphi_i)\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.30",
+      "Date": "23/06/2023",
+      "Text": "Si dica se la funzione $f$ tale che per ogni $x, y, z \\in \\mathbb{N}$\n$$f(x,y,z) = \\begin{cases} \\downarrow & \\text{se } \\varphi_x(y) = z \\\\ \\uparrow & \\text{altrimenti} \\end{cases}$$\nè calcolabile."
+    },
+    {
+      "Number": "2.31",
+      "Date": "12/07/2023",
+      "Text": "Studiare l'insieme:\n$$I = \\{i \\in \\mathbb{N} \\mid 0 \\in \\mathrm{Im}(\\varphi_i)\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.32",
+      "Date": "19/09/2023, 28/09/2023",
+      "Text": "Studiare l'insieme:\n$$I = \\{i \\in \\mathbb{N} \\mid \\exists y \\text{ tale che } \\varphi_x(y)+1 = 5\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.33",
+      "Date": "27/02/2024",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\mid \\exists y \\text{ tale che } \\varphi_x(y)\\downarrow\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.34",
+      "Date": "24/06/2024",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\varphi_x(0)\\downarrow \\vee \\varphi_x(1)\\downarrow\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.35",
+      "Date": "08/07/2024",
+      "Text": "Studiare l'insieme\n$$I = \\{x \\in \\mathbb{N} \\mid \\varphi_x(0)\\uparrow \\text{ AND } \\varphi_x(1)\\uparrow\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.36",
+      "Date": "24/07/2024",
+      "Text": "Dire se la funzione\n$$f(x) = \\begin{cases} 1 & \\text{se } \\varphi_x(x)\\downarrow \\text{ in } x^2 \\text{ passi} \\\\ 0 & \\text{altrimenti} \\end{cases}$$\nè calcolabile."
+    },
+    {
+      "Number": "2.37",
+      "Date": "17/09/2024",
+      "Text": "Studiare l'insieme:\n$$I = \\{i \\in \\mathbb{N} \\mid \\mathrm{Dom}(\\varphi_i) = \\emptyset\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    },
+    {
+      "Number": "2.38",
+      "Date": "27/09/2024",
+      "Text": "Si dica se l'insieme\n$$I = \\{i \\in \\mathbb{N} \\mid \\varphi_i \\text{ è una funzione iniettiva}\\}$$\nè un insieme decidibile. Si dica se l'insieme $I$ è finito o infinito."
+    },
+    {
+      "Number": "2.39",
+      "Date": "27/09/2024",
+      "Text": "Studiare l'insieme:\n$$I = \\{x \\in \\mathbb{N} \\mid \\forall y \\in \\mathbb{N},\\, \\varphi_y(x)\\downarrow\\}$$\novvero, dire se $I$ è ricorsivo, ricorsivamente enumerabile o non ricorsivamente enumerabile."
+    }
+  ]
+}

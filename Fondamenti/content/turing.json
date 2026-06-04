@@ -1,0 +1,45 @@
+{
+  "Section": "Macchine di Turing",
+  "Questions": [
+    {
+      "Number": "1.1",
+      "Date": "30/01/2017, 20/07/2017, 16/12/2019",
+      "Text": "Si scriva un programma per macchina di Turing che, ricevuto sul nastro un numero decimale, lasci sul nastro solo l'intero della divisione del numero di ingresso per 10.\n\n<table><thead><tr><th>Input</th><th>Output atteso</th></tr></thead><tbody><tr><td>231</td><td>23</td></tr><tr><td>19</td><td>1</td></tr><tr><td>7</td><td>0</td></tr></tbody></table>"
+    },
+    {
+      "Number": "1.2",
+      "Date": "06/02/2024",
+      "Text": "Programmare una MdT che calcoli la funzione logica NOT su una sequenza binaria.\n\n<table><thead><tr><th>Input</th><th>Output atteso</th></tr></thead><tbody><tr><td>1</td><td>0</td></tr><tr><td>11011001</td><td>00100110</td></tr><tr><td>000</td><td>111</td></tr></tbody></table>"
+    },
+    {
+      "Number": "1.3",
+      "Date": "24/02/2017",
+      "Text": "Programmare una macchina di Turing che, dato un nastro iniziale contenente due sequenze di A separate da una D, termina la sua esecuzione lasciando sul nastro la sequenza che contiene il maggior numero di A.\n\n<table><thead><tr><th>Input</th><th>Output atteso</th></tr></thead><tbody><tr><td>AADA</td><td>AA</td></tr><tr><td>AADAAA</td><td>AAA</td></tr><tr><td>AADAA</td><td>AA</td></tr><tr><td>DA</td><td>A</td></tr></tbody></table>"
+    },
+    {
+      "Number": "1.4",
+      "Date": "22/06/2017",
+      "Text": "Durante le sue guerre in Gallia, Giulio Cesare usava un semplice cifrario per comunicare con i suoi generali. In questo cifrario, ogni lettera era traslata di un numero fisso di posizioni. Nel cifrario originale, questo numero era 13: si aveva dunque:\n\n<table><thead><tr><th>in chiaro</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr><tr><th>cifrato</th><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td></tr></thead></table>\n\nSi scriva un programma per macchina di Turing che implementi un cifrario di Cesare generalizzato. Il programma prende in ingresso un numero decimale (da 1 a 5) seguito da una stringa su A\u2013Z, e deve lasciare sul nastro la stessa stringa, cifrata traslando ogni lettera del numero indicato di posizioni.\n\n<table><thead><tr><th>Input</th><th>Output atteso</th></tr></thead><tbody><tr><td>3ABC</td><td>DEF</td></tr><tr><td>5BACO</td><td>GFHT</td></tr><tr><td>1BACO</td><td>CBDP</td></tr></tbody></table>"
+    },
+    {
+      "Number": "1.5",
+      "Date": "",
+      "Text": "Programmare una macchina di Turing che calcoli $h(x, y) = x \\dotdiv y$ (la sottrazione troncata) utilizzando il sistema numerico unario (NB: utilizzare la notazione per cui l'output corrisponde al numero di simboli 1 sul nastro, mentre l'input \u00e8 il numero di simboli 1 meno 1, e.g: zero in input corrisponde a \"1\", ma in output \u00e8 il nastro vuoto).\n\n<table><thead><tr><th>Input</th><th>Output atteso</th></tr></thead><tbody><tr><td>111*11</td><td>1</td></tr><tr><td>111*111111</td><td>*</td></tr><tr><td>1111*1</td><td>111</td></tr></tbody></table>"
+    },
+    {
+      "Number": "1.6",
+      "Date": "15/07/2021",
+      "Text": "Costruire una macchina di Turing che preso un numero naturale ne restituisca il doppio. Per la rappresentazione dei naturali si scelga la notazione che si ritiene pi\u00f9 idonea."
+    },
+    {
+      "Number": "1.7",
+      "Date": "08/09/2023",
+      "Text": "Definire una macchina di Turing che decida il linguaggio $L = \\{0^n 1^n \\mid n > 0\\}$ (utilizzare due stati speciali di arresto $q_Y$ e $q_N$ per l'accettazione e il rifiuto della stringa, senza quindi ripulire il nastro per scrivere S\u00ec/No)."
+    },
+    {
+      "Number": "1.8",
+      "Date": "20/11/2024",
+      "Text": "Si fissi un alfabeto $A$. Costruire una macchina di Turing che diverga sempre a prescindere dal proprio input."
+    }
+  ]
+}

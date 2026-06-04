@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fondamenti</title>
+		<link rel="stylesheet" type="text/css" href="./src/style.css">
+		<script defer src="./src/library/mathjax.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+		<script src="./src/question.js"></script>
+		<script src="./src/section.js"></script>
+		<script src="./src/test.js"></script>
+	</head>
+	<body>
+		<div class="options">
+			<form method="GET">
+				<label for="q">Domande per sezione:</label>
+				<input type="number" name="q" />
+			</form>
+			<button class="reset" id="reset">Rigenera</button>
+		</div>
+		<div id="main"></div>
+	</body>
+	<script src="./src/main.js"></script>
+</html>
