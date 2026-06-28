@@ -24,7 +24,21 @@ public class SourceScannerString implements SourceScanner<String> {
 
     @Override
     public void advance() {
+        if(this.isNewLine(this.peek())) this.line++;
         this.pos++;
+    }
+
+    @Override
+    public boolean isEndOfLine() {
+        while(this.canConsume()){
+            if(this.isNewLine(this.peek())) return true;
+            this.advance();
+        }
+        return false;
+    }
+
+    private boolean isNewLine(char c) {
+        return c == '\n';
     }
 
     @Override
@@ -35,11 +49,6 @@ public class SourceScannerString implements SourceScanner<String> {
     @Override
     public int getLine() {
         return this.line;
-    }
-
-    @Override
-    public void incrementLine() {
-        this.line++;
     }
 
     private int length(){

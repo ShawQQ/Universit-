@@ -1,41 +1,45 @@
-package universita.robot.language.implementation.asm;
+package universita.robot.language.implementation.asm.lexer;
 
-import universita.robot.language.core.lexer.Lexer;
 import universita.robot.language.core.lexer.SourceScanner;
 import universita.robot.language.core.exception.LexerException;
+import universita.robot.language.core.lexer.positioned.PositionedLexer;
+import universita.robot.language.core.lexer.positioned.PositionedToken;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
-public class AsmLexer implements Lexer<AsmToken> {
+public class AsmLexer implements PositionedLexer<AsmToken> {
     private final List<Character> separatorList;
     private SourceScanner<?> scanner;
+    private Map<String, Supplier<AsmToken>> mnemonics;
     public AsmLexer(){
         this.separatorList = List.of(
                 '\t',
                 ' ',
-                ','
+                ',',
+                '\n'
+        );
+        this.mnemonics = Map.of(
+            "ADD", AsmToken.Add::new,
+            "JMP", AsmToken.Jmp::new
         );
     }
     @Override
-    public List<AsmToken> tokenize(SourceScanner<?> s) throws LexerException {
+    public List<PositionedToken<AsmToken>> tokenize(SourceScanner<?> s) throws LexerException {
         if(s == null) throw new NullPointerException("Scanner non valido");
         this.scanner = s;
-        List<AsmToken> tokens = new ArrayList<>();
+        List<PositionedToken<AsmToken>> tokens = new ArrayList<>();
         while(scanner.canConsume()){
             char c = scanner.peek();
             if(this.isSeparator(c)){
                 this.scanner.advance();
                 continue;
             }
-            if(this.isNewLine(c)){
-                this.scanner.incrementLine();
-                this.scanner.advance();
-                continue;
-            }
             if(Character.isLetterOrDigit(c)){
                 String lexeme = this.getNextLexeme();
-                tokens.add(matchLexeme(lexeme));
+                tokens.add(new PositionedToken<>(this.matchLexeme(lexeme), scanner.getLine()));
             }else{
                 throw new LexerException("Carattere non valido: %c".formatted(c), scanner.getLine());
             }
@@ -44,31 +48,20 @@ public class AsmLexer implements Lexer<AsmToken> {
         return tokens;
     }
 
-    private boolean isNewLine(char c) {
-        return c == '\n';
-    }
-
     private AsmToken matchLexeme(String lexeme) throws LexerException {
-        return switch(lexeme){
-            case "ADD" -> AsmToken.ADD;
-            case "JMP" -> AsmToken.JMP;
-            default -> {
-                if(this.scanner.canConsume() && this.scanner.peek() == ':'){
-                    this.scanner.advance();
-                    if(this.isLabel(lexeme) && this.isEndOfLine()) yield AsmToken.LABEL_DEFINTION;
-                    throw new LexerException("Definizione label non valida", scanner.getLine());
-                }
-                if(this.isOperand(lexeme)) yield AsmToken.OPERAND;
-                if(this.isLabel(lexeme)) yield AsmToken.LABEL;
-                throw new LexerException("Operazione non valida: %s".formatted(lexeme), scanner.getLine());
-            }
-        };
+        if(this.mnemonics.containsKey(lexeme)) return this.mnemonics.get(lexeme).get();
+        if(this.isLabelDefinition(lexeme)) return new AsmToken.LabelDefinition(lexeme);
+        if(this.isRegister(lexeme)) return new AsmToken.Operand<>(new AsmOperandValue.Register(lexeme));
+        if(this.isLiteral(lexeme)) return new AsmToken.Operand<>(new AsmOperandValue.Literal(Integer.parseInt(lexeme)));
+        if(this.isLabel(lexeme)) return new AsmToken.Label(lexeme);
+        throw new LexerException("Operazione non valida: %s".formatted(lexeme), scanner.getLine());
     }
 
-    private boolean isEndOfLine() {
-        while(this.scanner.canConsume()){
-            if(this.isNewLine(this.scanner.peek())) return true;
+    private boolean isLabelDefinition(String lexeme) {
+        if(this.scanner.canConsume() && this.scanner.peek() == ':'){
             this.scanner.advance();
+            if(this.isLabel(lexeme) && this.scanner.isEndOfLine()) return true;
+            throw new LexerException("Definizione label non valida", scanner.getLine());
         }
         return false;
     }
@@ -77,10 +70,6 @@ public class AsmLexer implements Lexer<AsmToken> {
         if(lexeme.isEmpty()) return false;
         if(!Character.isLetter(lexeme.charAt(0))) return false;
         return lexeme.chars().allMatch(Character::isLetterOrDigit);
-    }
-
-    private boolean isOperand(String lexeme) {
-        return this.isRegister(lexeme) || this.isLiteral(lexeme);
     }
 
     private boolean isLiteral(String lexeme) {

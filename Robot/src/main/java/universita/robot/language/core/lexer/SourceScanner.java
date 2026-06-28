@@ -5,6 +5,6 @@ public interface SourceScanner<S> {
     char peek();
     void advance();
     boolean canConsume();
+    boolean isEndOfLine();
     int getLine();
-    void incrementLine();
 }
