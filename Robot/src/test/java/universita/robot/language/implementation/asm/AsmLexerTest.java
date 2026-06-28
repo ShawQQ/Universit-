@@ -5,11 +5,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import universita.robot.language.core.exception.LexerException;
-import universita.robot.language.core.lexer.Lexer;
 import universita.robot.language.core.lexer.SourceScanner;
-import universita.robot.language.core.lexer.SourceScannerString;
-import universita.robot.language.core.lexer.positioned.PositionedLexer;
-import universita.robot.language.core.lexer.positioned.PositionedToken;
+import universita.robot.language.implementation.generic.PositionedSourceScannerString;
+import universita.robot.language.implementation.generic.PositionedLexer;
+import universita.robot.language.implementation.generic.PositionedToken;
 import universita.robot.language.implementation.asm.lexer.AsmLexer;
 import universita.robot.language.implementation.asm.lexer.AsmOperandValue;
 import universita.robot.language.implementation.asm.lexer.AsmToken;
@@ -21,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Lexer test suite")
 public class AsmLexerTest {
-    private PositionedLexer<AsmToken> lexer;
+    private PositionedLexer<PositionedToken<AsmToken>> lexer;
     private List<PositionedToken<AsmToken>> result;
     @BeforeEach
     public void beforeEach(){
@@ -36,7 +35,7 @@ public class AsmLexerTest {
     @DisplayName("Test due operandi tokenizzati correttamente")
     public void testAddTwoOperandRegisterCorrect(){
         String program = "ADD R1, R3";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
               new PositionedToken<>(new AsmToken.Add(), 1),
@@ -49,7 +48,7 @@ public class AsmLexerTest {
     @DisplayName("Test n operandi tokenizzati correttamente")
     public void testMultipleAddTwoOperandRegisterCorrect(){
         String program = "ADD R1,R3\nADD R2,R4\nADD R3,R1";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.Add(), 1),
@@ -68,7 +67,7 @@ public class AsmLexerTest {
     @DisplayName("Test due operandi immediati tokenizzati correttamente")
     public void testAddTwoOperandImmediate(){
         String program = "ADD 1,4";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.Add(), 1),
@@ -81,7 +80,7 @@ public class AsmLexerTest {
     @DisplayName("Test n operandi immediati tokenizzati correttamente")
     public void testMultipleAddTwoOperandImmediateCorrect(){
         String program = "ADD 4,7\nADD 1,5\nADD 3,4";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.Add(), 1),
@@ -100,7 +99,7 @@ public class AsmLexerTest {
     @DisplayName("Test due operandi misti tokenizzati correttamente")
     public void testAddTwoOperandRegisterAndImmediate(){
         String program = "ADD R1,4";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.Add(), 1),
@@ -113,7 +112,7 @@ public class AsmLexerTest {
     @DisplayName("Test n operandi misti tokenizzati correttamente")
     public void testMultipleAddTwoOperandRegisterAndImmediateCorrect(){
         String program = "ADD R3,7\nADD R5,5\nADD R1,4";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.Add(), 1),
@@ -132,14 +131,14 @@ public class AsmLexerTest {
     @DisplayName("Definizione label non valida")
     public void testThrowsIfLabelIsInvalidLexeme(){
         String program = "label: label:";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         assertThrows(LexerException.class, () -> this.lexer.tokenize(scanner));
     }
     @Test
     @DisplayName("JMP tokenizzato correttamente")
     void testJmpWithLabelCorrect(){
         String program = "JMP label";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.Jmp(), 1),
@@ -151,7 +150,7 @@ public class AsmLexerTest {
     @DisplayName("Definizione label tokenizzata correttamente")
     void testLabelDefinitionCorrect(){
         String program = "label:\n JMP label";
-        SourceScanner<?> scanner = new SourceScannerString(program);
+        SourceScanner<?> scanner = new PositionedSourceScannerString(program);
         this.result = this.lexer.tokenize(scanner);
         List<PositionedToken<AsmToken>> correct = List.of(
             new PositionedToken<>(new AsmToken.LabelDefinition("label"), 1),

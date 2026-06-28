@@ -1,4 +1,4 @@
-package universita.robot.language.core.lexer.positioned;
+package universita.robot.language.implementation.generic;
 
 import universita.robot.language.core.lexer.Token;
 

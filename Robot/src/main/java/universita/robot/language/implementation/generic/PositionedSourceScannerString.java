@@ -1,11 +1,11 @@
-package universita.robot.language.core.lexer;
+package universita.robot.language.implementation.generic;
 
-public class SourceScannerString implements SourceScanner<String> {
+public class PositionedSourceScannerString implements PositionedSourceScanner<String> {
     private final String source;
     private int line;
     private int pos;
 
-    public SourceScannerString(String source) {
+    public PositionedSourceScannerString(String source) {
         this.source = source;
         this.line = 1;
         this.pos = 0;
