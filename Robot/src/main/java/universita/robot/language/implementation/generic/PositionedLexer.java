@@ -1,11 +1,9 @@
 package universita.robot.language.implementation.generic;
 
 import universita.robot.language.core.exception.LexerException;
-import universita.robot.language.core.exception.ParserException;
 import universita.robot.language.core.lexer.Lexer;
 import universita.robot.language.core.lexer.SourceScanner;
 import universita.robot.language.core.lexer.Token;
-import universita.robot.language.core.parser.TokenScanner;
 
 import java.util.List;
 

@@ -6,5 +6,5 @@ import java.util.List;
 
 public sealed interface AsmASTNode extends ASTNode
         permits AsmASTNode.AsmProgramNode, AsmBinaryOperatorNode, AsmJumpTargetNode, AsmOperandNode, AsmStatementNode {
-    record AsmProgramNode(List<AsmStatementNode> tokens) implements AsmASTNode {}
+    record AsmProgramNode(List<AsmStatementNode> nodes) implements AsmASTNode {}
 }

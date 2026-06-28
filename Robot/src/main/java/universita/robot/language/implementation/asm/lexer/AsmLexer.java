@@ -1,13 +1,11 @@
 package universita.robot.language.implementation.asm.lexer;
 
-import universita.robot.language.core.lexer.SourceScanner;
 import universita.robot.language.core.exception.LexerException;
 import universita.robot.language.implementation.generic.PositionedLexer;
 import universita.robot.language.implementation.generic.PositionedSourceScanner;
 import universita.robot.language.implementation.generic.PositionedToken;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;

@@ -22,7 +22,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
             throw e;
         }
         if(this.scanner.canConsume()){
-            throw new ParserException("Token in eccesso dopo termine programma", scanner.getLine());
+            throw this.createParseError();
         }
         return program;
     }
@@ -100,7 +100,6 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
         AsmOperandNode l = this.parseOperand();
         this.scanner.advance();
         AsmOperandNode r = this.parseOperand();
-        this.scanner.advance();
         return new AsmInstructionNode.AsmBinaryInstructionNode(o, l, r);
     }
 
