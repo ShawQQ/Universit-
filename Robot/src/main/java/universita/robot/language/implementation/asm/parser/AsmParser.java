@@ -30,7 +30,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * Program ::= Statement
      */
-    private AsmASTNode.AsmProgramNode parseProgram() {
+    private AsmASTNode.AsmProgramNode parseProgram() throws ParserException {
         List<AsmStatementNode> statements = new ArrayList<>();
         while(this.scanner.canConsume()){
             statements.add(this.parseStatement());
@@ -42,7 +42,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * Statement ::= LabelDefinition | Instruction
      */
-    private AsmStatementNode parseStatement() {
+    private AsmStatementNode parseStatement() throws ParserException {
         AsmToken token = this.scanner.peek();
         return switch(token){
             case AsmToken.LabelDefinition t -> this.parseLabelDefinition();
@@ -56,7 +56,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * Instruction ::= BinaryInstruction | JumpInstruction
      */
-    private AsmInstructionNode parseInstruction() {
+    private AsmInstructionNode parseInstruction() throws ParserException{
         AsmToken token = this.scanner.peek();
         return switch(token){
             case AsmToken.Add _ -> this.parseBinaryInstruction();
@@ -70,7 +70,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * JumpInstruction ::= JMP JumpTarget
      */
-    private AsmInstructionNode parseJmpInstruction() {
+    private AsmInstructionNode parseJmpInstruction() throws ParserException {
         AsmToken token = this.scanner.peek();
         if(!(token instanceof AsmToken.Jmp)) throw this.createParseError();
         this.scanner.advance();
@@ -80,7 +80,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * JumpTarget ::= LABEL
      */
-    private AsmJumpTargetNode parseJumpTarget() {
+    private AsmJumpTargetNode parseJumpTarget() throws ParserException {
         AsmToken token = this.scanner.peek();
         return switch(token){
             case AsmToken.Label label -> new AsmJumpTargetNode.AsmLabelRefenceNode(label.name());
@@ -94,7 +94,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * BinaryInstruction ::= BinaryOperator Operand Operand
      */
-    private AsmInstructionNode.AsmBinaryInstructionNode parseBinaryInstruction() {
+    private AsmInstructionNode.AsmBinaryInstructionNode parseBinaryInstruction() throws ParserException {
         AsmBinaryOperatorNode o = this.parseBinaryOperator();
         this.scanner.advance();
         AsmOperandNode l = this.parseOperand();
@@ -107,7 +107,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * BinaryOperator ::= ADD
      */
-    private AsmBinaryOperatorNode parseBinaryOperator() {
+    private AsmBinaryOperatorNode parseBinaryOperator() throws ParserException {
         AsmToken token = this.scanner.peek();
         return switch(token){
             case AsmToken.Add _ -> new AsmBinaryOperatorNode.AsmAddNode();
@@ -121,7 +121,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * LabelDefinition   ::= LABEL_DEFINITION
      */
-    private AsmStatementNode.AsmLabelDefinitionNode parseLabelDefinition() {
+    private AsmStatementNode.AsmLabelDefinitionNode parseLabelDefinition() throws ParserException {
         if(!(this.scanner.peek() instanceof AsmToken.LabelDefinition token)) throw this.createParseError();
         return new AsmStatementNode.AsmLabelDefinitionNode((token.name()));
     }
@@ -129,7 +129,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     /**
      * Operand ::= OPERAND
      */
-    private AsmOperandNode parseOperand() {
+    private AsmOperandNode parseOperand() throws ParserException {
         if(!(this.scanner.peek() instanceof AsmToken.Operand<?> token)) throw this.createParseError();
         return switch(token.value()){
             case AsmOperandValue.Register r -> new AsmOperandNode.AsmRegisterOperand(r.name());

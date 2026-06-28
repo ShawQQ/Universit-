@@ -18,6 +18,6 @@ public interface PositionedLexer<T extends Token> extends Lexer<T> {
             PositionedSourceScanner<?> scanner = (PositionedSourceScanner<?>) s;
             return tokenize(scanner);
         }
-        throw new IllegalArgumentException("Scanner non valido per questo tipo di lexer");
+        throw new LexerException("Scanner non valido per questo tipo di lexer");
     }
 }

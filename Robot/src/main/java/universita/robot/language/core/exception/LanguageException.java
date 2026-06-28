@@ -4,4 +4,5 @@ public class LanguageException extends RuntimeException {
     public LanguageException(String message, int line) {
         super(message + " a riga %d".formatted(line));
     }
+    public LanguageException(String message) { super(message); }
 }

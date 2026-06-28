@@ -15,6 +15,6 @@ public interface PositionedParser<N extends ASTNode, T extends Token> extends Pa
             PositionedTokenScanner<T> s = (PositionedTokenScanner<T>) scanner;
             return parse(s);
         }
-        throw new IllegalArgumentException("Scanner non valido per questo tipo di parser");
+        throw new ParserException("Scanner non valido per questo tipo di parser");
     }
 }
