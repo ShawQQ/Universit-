@@ -2,17 +2,19 @@ package universita.robot.language.implementation.asm.lexer;
 
 import universita.robot.language.core.lexer.SourceScanner;
 import universita.robot.language.core.exception.LexerException;
-import universita.robot.language.core.lexer.positioned.PositionedLexer;
-import universita.robot.language.core.lexer.positioned.PositionedToken;
+import universita.robot.language.implementation.generic.PositionedLexer;
+import universita.robot.language.implementation.generic.PositionedSourceScanner;
+import universita.robot.language.implementation.generic.PositionedToken;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class AsmLexer implements PositionedLexer<AsmToken> {
+public class AsmLexer implements PositionedLexer<PositionedToken<AsmToken>> {
     private final List<Character> separatorList;
-    private SourceScanner<?> scanner;
+    private PositionedSourceScanner<?> scanner;
     private Map<String, Supplier<AsmToken>> mnemonics;
     public AsmLexer(){
         this.separatorList = List.of(
@@ -27,7 +29,7 @@ public class AsmLexer implements PositionedLexer<AsmToken> {
         );
     }
     @Override
-    public List<PositionedToken<AsmToken>> tokenize(SourceScanner<?> s) throws LexerException {
+    public List<PositionedToken<AsmToken>> tokenize(PositionedSourceScanner<?> s) throws LexerException {
         if(s == null) throw new NullPointerException("Scanner non valido");
         this.scanner = s;
         List<PositionedToken<AsmToken>> tokens = new ArrayList<>();
@@ -41,7 +43,7 @@ public class AsmLexer implements PositionedLexer<AsmToken> {
                 String lexeme = this.getNextLexeme();
                 tokens.add(new PositionedToken<>(this.matchLexeme(lexeme), scanner.getLine()));
             }else{
-                throw new LexerException("Carattere non valido: %c".formatted(c), scanner.getLine());
+                throw this.createLexerException("Carattere non valido: %c".formatted(c));
             }
         }
 
@@ -54,14 +56,14 @@ public class AsmLexer implements PositionedLexer<AsmToken> {
         if(this.isRegister(lexeme)) return new AsmToken.Operand<>(new AsmOperandValue.Register(lexeme));
         if(this.isLiteral(lexeme)) return new AsmToken.Operand<>(new AsmOperandValue.Literal(Integer.parseInt(lexeme)));
         if(this.isLabel(lexeme)) return new AsmToken.Label(lexeme);
-        throw new LexerException("Operazione non valida: %s".formatted(lexeme), scanner.getLine());
+        throw this.createLexerException("Operazione non valida: %s".formatted(lexeme));
     }
 
     private boolean isLabelDefinition(String lexeme) {
         if(this.scanner.canConsume() && this.scanner.peek() == ':'){
             this.scanner.advance();
             if(this.isLabel(lexeme) && this.scanner.isEndOfLine()) return true;
-            throw new LexerException("Definizione label non valida", scanner.getLine());
+            throw this.createLexerException("Definizione label non valida");
         }
         return false;
     }
@@ -93,5 +95,9 @@ public class AsmLexer implements PositionedLexer<AsmToken> {
 
     private boolean isSeparator(char c) {
         return this.separatorList.contains(c);
+    }
+
+    private LexerException createLexerException(String msg){
+        return new LexerException(msg, this.scanner.getLine());
     }
 }
