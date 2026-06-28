@@ -34,6 +34,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
         List<AsmStatementNode> statements = new ArrayList<>();
         while(this.scanner.canConsume()){
             statements.add(this.parseStatement());
+            this.scanner.advance();
         }
         return new AsmASTNode.AsmProgramNode(statements);
     }
@@ -95,8 +96,11 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
      */
     private AsmInstructionNode.AsmBinaryInstructionNode parseBinaryInstruction() {
         AsmBinaryOperatorNode o = this.parseBinaryOperator();
+        this.scanner.advance();
         AsmOperandNode l = this.parseOperand();
+        this.scanner.advance();
         AsmOperandNode r = this.parseOperand();
+        this.scanner.advance();
         return new AsmInstructionNode.AsmBinaryInstructionNode(o, l, r);
     }
 
@@ -126,9 +130,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
      * Operand ::= OPERAND
      */
     private AsmOperandNode parseOperand() {
-        if(!(this.scanner.peek() instanceof AsmToken.Operand<?> token)){
-            throw this.createParseError();
-        }
+        if(!(this.scanner.peek() instanceof AsmToken.Operand<?> token)) throw this.createParseError();
         return switch(token.value()){
             case AsmOperandValue.Register r -> new AsmOperandNode.AsmRegisterOperand(r.name());
             case AsmOperandValue.Literal  l -> new AsmOperandNode.AsmLiteralOperand(l.value());
