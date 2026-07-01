@@ -1,16 +1,16 @@
 package universita.robot.language.implementation.asm.parser;
 
 import universita.robot.language.core.exception.ParserException;
+import universita.robot.language.core.parser.Parser;
 import universita.robot.language.implementation.asm.lexer.AsmOperandValue;
 import universita.robot.language.implementation.asm.parser.node.*;
-import universita.robot.language.implementation.generic.PositionedParser;
-import universita.robot.language.implementation.generic.PositionedTokenScanner;
+import universita.robot.language.implementation.generic.token.PositionedTokenScanner;
 import universita.robot.language.implementation.asm.lexer.AsmToken;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, AsmToken> {
+public class AsmParser implements Parser<AsmASTNode.AsmProgramNode, PositionedTokenScanner<AsmToken>> {
     private PositionedTokenScanner<AsmToken> scanner;
     @Override
     public AsmASTNode.AsmProgramNode parse(PositionedTokenScanner<AsmToken> scanner) throws ParserException {
@@ -45,7 +45,7 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
     private AsmStatementNode parseStatement() throws ParserException {
         AsmToken token = this.scanner.peek();
         return switch(token){
-            case AsmToken.LabelDefinition t -> this.parseLabelDefinition();
+            case AsmToken.LabelDefinition _ -> this.parseLabelDefinition();
             case AsmToken.Add _,
                  AsmToken.Jmp _ -> this.parseInstruction();
             case AsmToken.Label _,
@@ -121,8 +121,8 @@ public class AsmParser implements PositionedParser<AsmASTNode.AsmProgramNode, As
      * LabelDefinition   ::= LABEL_DEFINITION
      */
     private AsmStatementNode.AsmLabelDefinitionNode parseLabelDefinition() throws ParserException {
-        if(!(this.scanner.peek() instanceof AsmToken.LabelDefinition token)) throw this.createParseError();
-        return new AsmStatementNode.AsmLabelDefinitionNode((token.name()));
+        if(!(this.scanner.peek() instanceof AsmToken.LabelDefinition(String name))) throw this.createParseError();
+        return new AsmStatementNode.AsmLabelDefinitionNode((name));
     }
 
     /**

@@ -1,16 +1,16 @@
 package universita.robot.language.implementation.asm.lexer;
 
 import universita.robot.language.core.exception.LexerException;
-import universita.robot.language.implementation.generic.PositionedLexer;
-import universita.robot.language.implementation.generic.PositionedSourceScanner;
-import universita.robot.language.implementation.generic.PositionedToken;
+import universita.robot.language.core.lexer.Lexer;
+import universita.robot.language.implementation.generic.source.PositionedSourceScanner;
+import universita.robot.language.implementation.generic.token.PositionedToken;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class AsmLexer implements PositionedLexer<PositionedToken<AsmToken>> {
+public class AsmLexer implements Lexer<PositionedToken<AsmToken>, PositionedSourceScanner<?>> {
     private final List<Character> separatorList;
     private PositionedSourceScanner<?> scanner;
     private Map<String, Supplier<AsmToken>> mnemonics;

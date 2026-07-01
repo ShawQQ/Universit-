@@ -1,4 +1,4 @@
-package universita.robot.language.core.parser;
+package universita.robot.language.implementation.generic.token;
 
 import universita.robot.language.core.lexer.Token;
 

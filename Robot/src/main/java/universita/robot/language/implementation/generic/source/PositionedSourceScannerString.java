@@ -1,4 +1,4 @@
-package universita.robot.language.implementation.generic;
+package universita.robot.language.implementation.generic.source;
 
 public class PositionedSourceScannerString implements PositionedSourceScanner<String> {
     private final String source;

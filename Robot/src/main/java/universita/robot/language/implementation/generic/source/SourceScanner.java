@@ -1,4 +1,4 @@
-package universita.robot.language.core.lexer;
+package universita.robot.language.implementation.generic.source;
 
 public interface SourceScanner<S> {
     S getSource();

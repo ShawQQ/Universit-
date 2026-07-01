@@ -4,11 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
+import universita.robot.language.core.parser.Parser;
 import universita.robot.language.implementation.asm.lexer.AsmOperandValue;
 import universita.robot.language.implementation.asm.lexer.AsmToken;
 import universita.robot.language.implementation.asm.parser.AsmParser;
 import universita.robot.language.implementation.asm.parser.node.*;
-import universita.robot.language.implementation.generic.*;
+import universita.robot.language.implementation.generic.token.PositionedToken;
+import universita.robot.language.implementation.generic.token.PositionedTokenScanner;
+import universita.robot.language.implementation.generic.token.PositionedTokenScannerList;
 
 import java.util.List;
 
@@ -16,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 @DisplayName("AsmParser test suite")
 public class AsmParserTest {
-    private PositionedParser<AsmASTNode.AsmProgramNode, AsmToken> parser;
+    private Parser<AsmASTNode.AsmProgramNode, PositionedTokenScanner<AsmToken>> parser;
     private AsmASTNode.AsmProgramNode result;
     @BeforeEach
     public void beforeEach(){
