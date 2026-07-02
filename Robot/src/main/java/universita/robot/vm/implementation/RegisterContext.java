@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class RegisterContext implements WritableContext<String> {
-    private List<Observer> observerList;
+    private final List<Observer> observerList;
     private final Map<String, InputOutput<Object>> registers;
 
     public RegisterContext(Map<String, InputOutput<Object>> registers) {
@@ -35,7 +35,7 @@ public class RegisterContext implements WritableContext<String> {
     public <V> V read(String operand, Class<V> type) throws WritableContextException {
         if(!this.isValidRegister(operand))
             throw new WritableContextException("Registro %s non disponibile".formatted(operand));
-        return type.cast(registers.get(operand));
+        return type.cast(registers.get(operand).read());
     }
 
     @Override
@@ -47,5 +47,10 @@ public class RegisterContext implements WritableContext<String> {
 
     private boolean isValidRegister(String operand) {
         return this.registers.containsKey(operand);
+    }
+
+    @Override
+    public String toString() {
+        return registers.toString();
     }
 }

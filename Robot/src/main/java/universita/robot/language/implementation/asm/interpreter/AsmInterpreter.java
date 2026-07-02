@@ -2,15 +2,12 @@ package universita.robot.language.implementation.asm.interpreter;
 
 import universita.robot.language.core.interpreter.Interpreter;
 import universita.robot.language.core.parser.ASTNode;
-import universita.robot.language.implementation.asm.parser.node.AsmBinaryOperatorNode;
-import universita.robot.language.implementation.asm.parser.node.AsmInstructionNode;
-import universita.robot.language.implementation.asm.parser.node.AsmJumpTargetNode;
-import universita.robot.language.implementation.asm.parser.node.AsmOperandNode;
+import universita.robot.language.implementation.asm.parser.node.*;
 import universita.robot.vm.core.InputOutput;
 import universita.robot.vm.core.WritableContext;
 import universita.robot.vm.implementation.Register;
 
-public class AsmInterpreter implements Interpreter<AsmInstructionNode> {
+public class AsmInterpreter implements Interpreter<AsmStatementNode> {
     private final WritableContext<String> ctx;
     private InputOutput<Integer> pc;
     public AsmInterpreter(WritableContext<String> ctx, InputOutput<Integer> pc) {
@@ -19,10 +16,11 @@ public class AsmInterpreter implements Interpreter<AsmInstructionNode> {
     }
 
     @Override
-    public void execute(AsmInstructionNode instr) {
+    public void execute(AsmStatementNode instr) {
         switch(instr){
             case AsmInstructionNode.AsmBinaryInstructionNode i -> this.executeBinaryInstruction(i);
             case AsmInstructionNode.AsmJumpInstructionNode j ->  this.executeJumpInstruction(j);
+            case AsmStatementNode.AsmLabelDefinitionNode _ -> {}
         }
     }
 

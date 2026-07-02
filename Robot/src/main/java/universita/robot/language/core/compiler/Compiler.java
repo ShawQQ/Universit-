@@ -4,5 +4,5 @@ import universita.robot.language.core.parser.ASTNode;
 
 @FunctionalInterface
 public interface Compiler<S, N extends ASTNode> {
-    N compile(S source);
+    ExecutableProgram<N> compile(S source);
 }
