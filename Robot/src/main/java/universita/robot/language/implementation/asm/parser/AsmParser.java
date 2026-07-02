@@ -83,7 +83,7 @@ public class AsmParser implements Parser<AsmASTNode.AsmProgramNode, PositionedTo
     private AsmJumpTargetNode parseJumpTarget() throws ParserException {
         AsmToken token = this.scanner.peek();
         return switch(token){
-            case AsmToken.Label label -> new AsmJumpTargetNode.AsmLabelRefenceNode(label.name());
+            case AsmToken.Label label -> new AsmJumpTargetNode.AsmLabelReferenceNode(label.name());
             case AsmToken.Add _,
                  AsmToken.Jmp _,
                  AsmToken.LabelDefinition _,
@@ -97,7 +97,7 @@ public class AsmParser implements Parser<AsmASTNode.AsmProgramNode, PositionedTo
     private AsmInstructionNode.AsmBinaryInstructionNode parseBinaryInstruction() throws ParserException {
         AsmBinaryOperatorNode o = this.parseBinaryOperator();
         this.scanner.advance();
-        AsmOperandNode l = this.parseOperand();
+        AsmOperandNode l = this.parseWritableOperand();
         this.scanner.advance();
         AsmOperandNode r = this.parseOperand();
         return new AsmInstructionNode.AsmBinaryInstructionNode(o, l, r);
@@ -126,7 +126,18 @@ public class AsmParser implements Parser<AsmASTNode.AsmProgramNode, PositionedTo
     }
 
     /**
-     * Operand ::= OPERAND
+     * WritableOperand ::= REGISTER
+     */
+    private AsmOperandNode parseWritableOperand() throws ParserException {
+        if(!(this.scanner.peek() instanceof AsmToken.Operand<?> token)) throw this.createParseError();
+        return switch(token.value()){
+            case AsmOperandValue.Register r -> new AsmOperandNode.AsmRegisterOperand(r.name());
+            case AsmOperandValue.Literal  _ -> throw this.createParseError();
+        };
+    }
+
+    /**
+     * Operand ::= REGISTER | LITERAL
      */
     private AsmOperandNode parseOperand() throws ParserException {
         if(!(this.scanner.peek() instanceof AsmToken.Operand<?> token)) throw this.createParseError();
